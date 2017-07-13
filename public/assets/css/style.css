@@ -1,0 +1,92 @@
+body {
+    background-color: #d9f7f9;
+    background-image:url(https://www.transparenttextures.com/patterns/arches.png);
+}
+
+#smb {
+    height:200px;
+    position:relative;
+    left:550px;
+    top:-35px;
+}
+
+h1 {
+    font-size:48px;
+    position:relative;
+    left:600px;
+    margin-top:60px;
+}
+
+ul {
+    padding:20px;
+    font-size:32px; 
+}
+
+header {
+    background-color: #fdcfcd;
+    font-family: 'Raleway', sans-serif;
+    padding-top: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 150px;
+    opacity: .7;
+    width:1250px;
+    border-bottom: 2px double;
+}
+
+#nav-top1, #nav-top2, #nav-top3, #nav-top4 {
+    position: relative;
+    opacity:.9;
+}
+
+#nav-top1 {
+    top:-180px;
+}
+
+#nav-top2 {
+    left:300px;
+    top:-210px;
+}
+
+#nav-top3 {
+    left:800px;
+    top:-240px;
+}
+
+#nav-top4 {
+    top:-270px;
+    left: 1100px
+}
+
+.filling {
+    font-family: 'Dosis', sans-serif;
+    max-width:1200px;
+    background-color: #ffdcda;
+    margin: 20px 20px 20px 20px;
+    opacity:.8;
+    padding:25px;
+    font-size:24px;
+}
+
+footer {
+    max-width:1200px;
+    margin: 20px 20px 20px 20px;
+    padding:25px;
+    opacity:.7;
+    text-align: center;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color:  #55a36e;
+}
+
+a:hover {
+    color:#58c77b;
+    text-decoration: underline;
+}

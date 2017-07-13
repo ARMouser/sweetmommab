@@ -1,0 +1,28 @@
+{
+  "name": "sweetmommab",
+  "version": "1.0.0",
+  "description": "Bakery Website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ARMouser/sweetmommab.git"
+  },
+  "author": "Adam Mouser",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ARMouser/sweetmommab/issues"
+  },
+  "homepage": "https://github.com/ARMouser/sweetmommab#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "handlebars": "^4.0.10",
+    "mysql": "^2.13.0",
+    "sequelize": "^4.0.0",
+    "sequelize-cli": "^2.7.0"
+  }
+}
