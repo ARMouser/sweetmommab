@@ -1,7 +1,5 @@
 var bcrypt = require("bcrypt");
 var saltRounds = 10;
-var bcrypt = require("bcrypt");
-var saltRounds = 10;
 
 module.exports = function(sequelize, DataTypes) {
 	var User = sequelize.define("User", {
@@ -58,7 +56,7 @@ module.exports = function(sequelize, DataTypes) {
 			});
 		});
 	};
-	
+
 	User.prototype.checkPassword = function(pass, cb) {
 		bcrypt.compare(pass, this.password, cb);
 	};

@@ -3,5 +3,6 @@ module.exports = function(sequelize, DataTypes) {
         item: {
             type: DataTypes.STRING
         },
-    }); return Bakery
-}
+    });
+    return Bakery;
+};
