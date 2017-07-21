@@ -20,4 +20,6 @@ module.exports = function(sequelize, DataTypes) {
 			through: "OrderProducts"
 		});
 	}
-}
+
+	return Order;
+};
