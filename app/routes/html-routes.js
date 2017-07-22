@@ -8,8 +8,8 @@ module.exports = function (app, passport) {
     app.get('/about', function (req, res) {
         res.render("about");
     });
-    app.get('/goodies', function (req, res) {
-        res.render("goodies");
+    app.get('/order', function (req, res) {
+        res.render("order");
     })
     app.get('/contact', function (req, res) {
         res.render("contact");

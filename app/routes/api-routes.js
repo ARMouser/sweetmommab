@@ -17,12 +17,12 @@ module.exports = function(app, passport) {
       res.json(dbProduct);
     });
   });
-  app.put("/api/order/", loggedIn, function(req, res) {
+  app.put("/api/order/", function(req, res) {
     db.Order.create(req.body).then(function(dbOrder){
       dbOrder.addProducts(products.id);
     });
   });
-  app.get("/api/ordered-product", loggedIn, function(req, res) {
+  app.get("/api/ordered-product", function(req, res) {
     db.Order.findAll({
       where: {
         id: req.user.id
@@ -45,13 +45,12 @@ module.exports = function(app, passport) {
       res.json(dbRec);
     });
   });
-  app.put("/api/save-recommendation", loggedIn, function(req, res) {
+  app.put("/api/save-recommendation", function(req, res) {
     db.Recommendation.create({
       text: req.body.text, 
       UserId: req.user.id   
 
     }).then(function(dbRec) {
-      if err throw err
     })
   })
 }
