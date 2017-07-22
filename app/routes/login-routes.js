@@ -1,16 +1,16 @@
-var db = require("../models");
+var db = require("../../models");
 
 module.exports = function(app, passport) {
 
 	//we would put the guest account where null is ideally
-	app.get("/logintest", function(req, res){
-		if (!req.user) {
-			res.render("home", {user: null});
-		}
-		else {
-			res.render("home", {user: req.user});
-		}
-	});
+	// app.get("/logintest", function(req, res){
+	// 	if (!req.user) {
+	// 		res.render("home", {user: null});
+	// 	}
+	// 	else {
+	// 		res.render("home", {user: req.user});
+	// 	}
+	// });
 
 	app.get("/login", function(req, res){
 		res.render("login", {message: req.flash});
@@ -27,9 +27,8 @@ module.exports = function(app, passport) {
 			where: {
 				username: req.body.username
 			}
-		}).then(function(err, data){
-			if (err) console.log(err);
-			else if (!data){
+		}).then(function(data){
+			if (!data){
 				db.User.create({
 					name: req.body.name,
 					username: req.body.username,
@@ -43,7 +42,7 @@ module.exports = function(app, passport) {
 				});
 			}
 			else if (data) {
-				req.flash("Username Taken");
+				req.flash("Username Taken.");
 			}
 		});
 	});
@@ -53,6 +52,6 @@ module.exports = function(app, passport) {
 			failureRedirect: "/login",
 			failureFlash: true
 		}), function(req, res) {
-			res.redirect("/logintest");
+			res.redirect("back");
 	});
 }
