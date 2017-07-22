@@ -25,7 +25,7 @@ module.exports = function (app, passport) {
     app.get('/shopping-cart', loggedIn, function (req, res, next) {
     	res.sendFile(path.join(__dirname, '../public/shopping-cart.html'))
     })
-    app.get('order-history', loggedIn, function (req, res, next) {
+    app.get('/order-history', loggedIn, function (req, res, next) {
     	res.sendFile(path.join(__dirname, '../public/order-history.html'))
     })
     // this is a boiler plate function for using passport. Not entirely sure on the passport side of things

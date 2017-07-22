@@ -9,6 +9,7 @@ module.exports = function(sequelize, DataTypes) {
 			validate: {
 				len: [1]
 			},
+			unique: true
 		},
 
 		email: {
@@ -47,6 +48,11 @@ module.exports = function(sequelize, DataTypes) {
 		}
 
 	});
+
+	User.associate = function(models) {
+		User.hasMany(models.Recommendation);
+		User.hasMany(models.Order);
+	}
 
 	User.hashPassword = function(password, cb) {
 		bcrypt.genSalt(saltRounds, function(err, salt){
