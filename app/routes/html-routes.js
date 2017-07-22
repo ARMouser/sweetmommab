@@ -39,13 +39,5 @@ module.exports = function (app, passport) {
             res.render("profile");
         }
     })
-    // this is a boiler plate function for using passport. Not entirely sure on the passport side of things
-    function loggedIn(req, res, next) {
-    if (req.user) {
-        next();
-    } else {
-        res.redirect('/login');
-    }
-}
 
 };
