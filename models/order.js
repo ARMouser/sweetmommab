@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		date: {
 			type: DataTypes.DATE,
-			defaultValue: Date.now()
+			defaultValue: sequelize.NOW
 		}
 	});
 

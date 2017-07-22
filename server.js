@@ -7,11 +7,9 @@ var passport = require("passport");
 var Strategy = require("passport-local").Strategy;
 var flash = require("connect-flash");
 
-
 var app = express();
 var PORT = process.env.PORT || 4020;
 
-//Passport Configuration
 passport.use(new Strategy({
         passReqToCallBack: true
     },
@@ -42,29 +40,26 @@ passport.deserializeUser(function(id, cb) {
     });
 });
 
-//Express
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static("./public"));
 app.use(methodOverride("_method"));
-
 app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 app.use(flash());
-
 app.use(passport.initialize());
 app.use(passport.session());
 
-require("./routes/api-routes.js")(app, passport);
-require('./routes/html-routes.js')(app, passport);
-require("./routes/login-routes.js")(app, passport);
+require("./app/routes/api-routes.js")(app, passport);
+require('./app/routes/html-routes.js')(app, passport);
+require('./app/routes/login-routes.js')(app, passport);
 
 // app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 // app.set("view engine", "handlebars");
 
 //EJS for testing logins, uncomment above for using handlebars
+
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 
