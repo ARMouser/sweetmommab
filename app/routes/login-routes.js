@@ -21,29 +21,48 @@ module.exports = function(app, passport) {
 		res.render("create", {message:req.flash});
 	});
 
+
+	app.get("/logout", function(req, res){
+		req.logout();
+		res.redirect("/");
+	});
+
 	//Account creation
 	app.post("/create", function(req, res){
-		db.User.findOne({
-			where: {
-				username: req.body.username
+		// db.User.findOne({
+		// 	where: {
+		// 		username: req.body.username
+		// 	}
+		// }).then(function(data){
+		// 	if (!data){
+		// 		db.User.create({
+		// 			name: req.body.name,
+		// 			username: req.body.username,
+		// 			password: req.body.password,
+		// 			email: req.body.email
+		// 		}).then(function(user){
+		// 			if (!user) console.log("couldn't create");
+		// 			else {
+		// 				res.redirect("/login");
+		// 			}
+		// 		});
+		// 	}
+		// 	else if (data) {
+		// 		req.flash("Username Taken.");
+		// 	}
+		// });
+		db.User.create({
+			name: req.body.name,
+			username: req.body.username,
+			password: req.body.password,
+			email: req.body.email
+		}).then(function(user){
+			if (!user) console.log("some problem here");
+			else {
+				res.redirect("/login");
 			}
-		}).then(function(data){
-			if (!data){
-				db.User.create({
-					name: req.body.name,
-					username: req.body.username,
-					password: req.body.password,
-					email: req.body.email
-				}).then(function(user){
-					if (!user) console.log("couldn't create");
-					else {
-						res.redirect("/login");
-					}
-				});
-			}
-			else if (data) {
-				req.flash("Username Taken.");
-			}
+		}).catch(function(err){
+			console.log(err);
 		});
 	});
 
