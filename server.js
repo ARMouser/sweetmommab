@@ -58,6 +58,10 @@ require('./app/routes/login-routes.js')(app, passport);
 // app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 // app.set("view engine", "handlebars");
 
+app.get('/admin', function(req, res) {
+    res.sendFile(__dirname + '/app/public/admin.html')
+})
+
 //EJS for testing logins, uncomment above for using handlebars
 
 app.set("views", __dirname + "/views");
