@@ -31,11 +31,18 @@ module.exports = function (app, passport) {
             res.render("cart");
         }
     })
-    app.get('profile', function (req, res) {
+    app.get('/profile', function (req, res) {
         if (!req.user) {
             res.redirect("/login")
         } else {
             res.render("profile");
+        }
+    })
+    app.get('/submitRecommendation', function (req, res) {
+        if (!req.user) {
+            res.redirect("/login")
+        } else {
+            res.render("submitRecommendation");
         }
     })
 
