@@ -17,7 +17,6 @@ module.exports = function (app, passport) {
     app.get('/recommendations', function (req, res) {
         res.render("recommendations");
     })
-    // added loggedIn for the next two routes to correspond with passport
     app.get('/submitGoodie', function (req, res) {
         if (!req.user) {
             res.redirect("/login")
