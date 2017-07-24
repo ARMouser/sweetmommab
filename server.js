@@ -44,7 +44,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-app.use(express.static("./public"));
+app.use(express.static("./app/public"));
 app.use(methodOverride("_method"));
 app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 app.use(flash());
@@ -57,6 +57,10 @@ require('./app/routes/login-routes.js')(app, passport);
 
 // app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 // app.set("view engine", "handlebars");
+
+app.get('/admin', function(req, res) {
+    res.sendFile(__dirname + '/app/public/admin.html')
+})
 
 //EJS for testing logins, uncomment above for using handlebars
 
