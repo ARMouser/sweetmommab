@@ -1,4 +1,4 @@
-var db = '../../models';
+const db = require('../../models');
 
 module.exports = function(app, passport) {
 
