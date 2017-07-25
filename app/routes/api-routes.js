@@ -19,11 +19,22 @@ module.exports = function(app, passport) {
       res.json(dbProduct);
     });
   });
+
   app.put('/api/new_products', function(res, req) {
     db.Product.create(req.body).then(function(newProduct) {
       res.json(newProduct)
     })
   })
+
+  app.get('/api/new_orders', function(req, res) {
+    db.Order.findAll({
+      where: {
+        finished: false
+      }
+    }).then(function(orders) {
+      res.json(orders)
+    })
+  });
 
   app.put("/api/order/", function(req, res) {
     db.Order.create(req.body).then(function(dbOrder){
@@ -54,6 +65,16 @@ module.exports = function(app, passport) {
       res.json(dbRec);
     });
   });
+
+  app.get("/api/recommendations_approval", function(req, res) {
+    db.Recommendation.findAll({
+      where: {
+        approval: false
+      }
+    }).then(function(data) {
+      res.json(data)
+    })
+  })
 
   app.put("/api/save-recommendation", function(req, res) {
     db.Recommendation.create({
