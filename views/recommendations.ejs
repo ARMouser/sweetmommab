@@ -12,7 +12,9 @@
   <body>
     <%- include('partials/header') %>
     <div class="container">
-        <% for(i in rec) { %>
+        <% rec = JSON.parse(rec) %>
+        <% for(var i in rec) { %>
+        <% console.log(rec[i]) %>
             <div class="container">
                 <p><%=rec[i].text%></p>
             </div>

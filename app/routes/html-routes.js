@@ -18,6 +18,7 @@ module.exports = function (app, passport) {
     app.get('/recommendations', function (req, res) {
         request(req.protocol + '://' + req.get('host') + '/api/recommendations', function(error, response, data){
             if (error) console.log(error);
+            console.log(data);
             res.render("recommendations", {rec:data});
         });
     });
