@@ -1,4 +1,5 @@
 var path = require('path');
+var request = require('request');
 
 module.exports = function (app, passport) {
     app.get('/', function (req, res) {
@@ -15,8 +16,11 @@ module.exports = function (app, passport) {
         res.render("contact");
     })
     app.get('/recommendations', function (req, res) {
-        res.render("recommendations");
-    })
+        request(req.protocol + '://' + req.get('host') + '/api/recommendations', function(error, response, data){
+            if (error) console.log(error);
+            res.render("recommendations", {rec:data});
+        });
+    });
     app.get('/submitGoodie', function (req, res) {
         if (!req.user) {
             res.redirect("/login")
