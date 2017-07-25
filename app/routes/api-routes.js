@@ -1,5 +1,4 @@
 var db = require('../../models');
-var request = require("request");
 
 module.exports = function(app, passport) {
   app.get("/api/products", function(req, res) {
