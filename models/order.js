@@ -6,6 +6,10 @@ module.exports = function(sequelize, DataTypes) {
 		date: {
 			type: DataTypes.DATE,
 			defaultValue: sequelize.NOW
+		},
+		finished: {
+			type: DataTypes.BOOLEAN,
+			defaultValue: false
 		}
 	});
 
