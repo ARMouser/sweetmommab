@@ -25,10 +25,10 @@ module.exports = function(app, passport) {
   app.get("/api/ordered-product", function(req, res) {
     db.Order.findAll({
       where: {
-        id: req.user.id
+        UserId: req.user.id
       },
       include: {
-        model: Product
+        model: [db.Product]
       }
     }).then(function(dbOrder) {
       res.json(dbOrder);
