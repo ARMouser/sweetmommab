@@ -20,12 +20,18 @@
               <img src="assets/images/____" id="cart">
 
             </div>
+            <% if (!user) { %>
+              <p>You must log in to write recommendations.</p>
+              <a href="../login">Login</a>
+              <a href="../create">Or Create an Account</a>
+            <% } else { %>
               <div id="recommendationBox">
                 <img src="assets/images/______">
-                <input type="text" placeholder="description" value="">
-
-              </div>
-                  <button type="button">Submit Your Own</button>
+                <form action="/api/save-recommendation" method="post">
+                <input type="text" placeholder="description" name="text">
+                  <button type="submit">Submit Your Own</button>
+                </form>
+              <% } %>
 
       </body>
 
