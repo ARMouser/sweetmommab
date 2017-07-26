@@ -12,11 +12,13 @@
   <body>
       <div class="loginForm">
         <img src="assets/Images/_____" id="smb">
-      <form action="/action_page.php">
+      <form action="/account/create" method="post">
 
-        Username: <input type="text" placeholder="Username" value="">
-        Password: <input type="text" placeholder="Password" value="">
-        <button type="button" id="login-btn">Login</button>
+        Username: <input type="text" placeholder="Username" name="username">
+        Password: <input type="text" placeholder="Password" name="password">
+        Name: <input type="text" placeholder="Name" name="name">
+        Email: <input type="email" placeholder="Email" name="email">
+        <button type="button" id="login-btn">Create Account</button>
       </form>
     </div>
   </body>

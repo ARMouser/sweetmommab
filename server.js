@@ -18,12 +18,11 @@ passport.use(new Strategy({
             if (!user) {
                 return cb(null, false, { message: "Invalid Username." });
             }
-            console.log(user);
             user.checkPassword(password, function(err, res) {
                 if (err || !res) {
                     return cb(null, false, { message: "Invalid Password." });
                 } else {
-                    return cb(null, user.toJSON());
+                    return cb(null, user);
                 }
             });
         });

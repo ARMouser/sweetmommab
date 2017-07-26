@@ -15,8 +15,20 @@
 
       </div>
         <div class="enterlogin">
-          <button type="button" id="login-btn">Login</button>
-          <button type="button" id="guest-btn">Guest</button>
+          <form action="/account/login" method="post">
+            <div>
+               <input type="text" name="username" placeholder="Username" /><br/>
+            </div>
+            <div>
+               <input type="password" name="password" placeholder="Password" />
+             </div>
+             <% if(message.error) {%>
+             <p><%=message.error%></p>
+           <% } %>
+           <div>
+             <input type="submit" value="Login"/>
+            </div>
+          </form>
         </div>
 
       </body>

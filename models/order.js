@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
 	var Order = sequelize.define("Order", {
 		custom: {
-			type: DataTypes.TEXT
+			type: DataTypes.TEXT,
 		},
 		date: {
 			type: DataTypes.DATE,
