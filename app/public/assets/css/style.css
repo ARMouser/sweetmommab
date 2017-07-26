@@ -35,7 +35,7 @@ header {
     border-bottom: 2px double;
 }
 
-#nav-top1, #nav-top2, #nav-top3, #nav-top4 {
+#nav-top1, #nav-top2, #nav-top3, #nav-top4, #nav-top5, #nav-top6 {
     position: relative;
     opacity:.9;
 }
@@ -57,6 +57,18 @@ header {
 #nav-top4 {
     top:-270px;
     left: 1100px
+}
+
+#nav-top5 {
+    top: -226px;
+    left: 1024px;
+    font-size: 24px;
+}
+
+#nav-top6 {
+    top: -250px;
+    left: 1100px;
+    font-size: 24px;
 }
 
 .filling {
