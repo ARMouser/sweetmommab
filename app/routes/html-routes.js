@@ -10,15 +10,17 @@ module.exports = function (app, passport) {
         res.render("about");
     });
     app.get('/order', function (req, res) {
-        res.render("order");
-    })
+        request('https://' + req.get('host') + '/api/products', function(error, response, data){
+            if (error) console.log(error);
+            res.render("order", {products:data});
+        });
+    });
     app.get('/contact', function (req, res) {
         res.render("contact");
     })
     app.get('/recommendations', function (req, res) {
-        request(req.protocol + '://' + req.get('host') + '/api/recommendations', function(error, response, data){
+        request('https://' + req.get('host') + '/api/recommendations', function(error, response, data){
             if (error) console.log(error);
-            console.log(data);
             res.render("recommendations", {rec:data});
         });
     });
