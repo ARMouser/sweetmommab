@@ -68,6 +68,7 @@ module.exports = function(app, passport) {
 			}
 		}).catch(function(err){
 			req.flash("Username Taken.");
+			res.redirect("/create");
 		});
 	});
 
