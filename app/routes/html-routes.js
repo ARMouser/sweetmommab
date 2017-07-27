@@ -35,7 +35,10 @@ module.exports = function (app, passport) {
         if (!req.user) {
             res.redirect("/login")
         } else {
-            res.render("cart", {user:req.user});
+            request(req.protocol + "://" +req.get('host') + '/api/ordered-product', function(error, response, data){
+                if (error) console.log(error);
+                res.render("cart", {user:req.user, order:data});
+            });
         }
     })
     app.get('/profile', function (req, res) {

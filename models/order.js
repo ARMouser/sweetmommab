@@ -10,6 +10,10 @@ module.exports = function(sequelize, DataTypes) {
 		finished: {
 			type: DataTypes.BOOLEAN,
 			defaultValue: false
+		},
+		sent: {
+			type: DataTypes.BOOLEAN,
+			defaultValue: false
 		}
 	});
 

@@ -12,27 +12,17 @@
     <body>
       <div class="Logo">
       <%- include('partials/header') %>
-
-        <div class="userAccount">
-          <label><b>Username</b></label>
-
-        </div>
-
-            <div class="cart">
-              <img src="assets/images/____" id="cart">
-
-            </div>
                 <div class="optionDropdown">
-                    <h2> More Options</h2
+                    <h2> More Options</h2>
                 </div>
           <div class="goodies">
             <h2 id="goodieTitle"></h2>
             <img src="assets/images/_____" id="goodieimg">
             <% products = JSON.parse(products) %>
             <% for (var i in products) { %>
-             <img class="foodpic" src=<%=products[i].photo>
+             <img class="foodpic" src=<%=products[i].photo %>
              <ul class="product">
-              <li class="product-name"><%=products[i].name%></li>
+              <li class="product-name"><%=products[i].name %></li>
               <li class="product-desc"><%=products[i].description%></li>
               <li class="price">$<%=products[i].price%></li>
              </ul>
@@ -49,9 +39,13 @@
                 </ul>
               </div>
               <div id="addToCart">
-                <button type="submit">Add To Cart</button>
+                <form action="/api/order/product" method="put">
+                  <input type="hidden" name="productid" value=<%=products[i].id%> />
+                  <input type="submit" value="Add to Cart" />
+                </form>
               </div>
-          </div>
+              <% } %>
+            </div>
 
 
 

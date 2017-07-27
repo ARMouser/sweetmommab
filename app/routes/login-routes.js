@@ -67,7 +67,7 @@ module.exports = function(app, passport) {
 				res.redirect("/login");
 			}
 		}).catch(function(err){
-			console.log(err);
+			req.flash("Username Taken.");
 		});
 	});
 

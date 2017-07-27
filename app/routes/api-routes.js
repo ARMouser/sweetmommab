@@ -19,11 +19,11 @@ module.exports = function(app, passport) {
     });
   });
 
-  app.put('/api/new_products', function(req, res) {
+  app.post('/api/new_products', function(req, res) {
     db.Product.create(req.body).then(function(newProduct) {
-      res.json(newProduct)
-    })
-  })
+      res.json(newProduct);
+    });
+  });
 
   app.get('/api/new_orders', function(req, res) {
     db.Order.findAll({
@@ -31,20 +31,59 @@ module.exports = function(app, passport) {
         finished: false
       }
     }).then(function(orders) {
-      res.json(orders)
-    })
+      res.json(orders);
+    });
   });
 
-  app.put("/api/order/", function(req, res) {
-    db.Order.create(req.body).then(function(dbOrder){
-      dbOrder.addProducts(products.id);
+  app.put("/api/order/product/", function(req, res) {
+    request(req.protocol + "://" + req.get('host') + "/api/products/" + req.body.productid, function(error, response, data){
+      if(error) throw(error);
+      db.Order.findOrCreate({
+        where: {
+          UserId: req.user.id,
+          sent: false
+        }
+      }).then(function(dbOrder){
+        dbOrder.addProduct(data);
+        dbOrder.save();
+      });
+    });
+  });
+
+  app.put("/api/order/checkout", function(req, res) {
+    db.Order.update({
+      where: {
+        UserId: req.user.id
+      }
+    }, {
+      sent: true
+    }).then(function(dbOrder){
+      //redirect to payment when implemented
+      res.json(dbOrder);
+    }).catch(function(err){
+      console.log(err);
     });
   });
 
   app.get("/api/ordered-product", function(req, res) {
     db.Order.findAll({
       where: {
-        UserId: req.user.id
+        UserId: req.user.id,
+        sent: false
+      },
+      include: {
+        model: [db.Product]
+      }
+    }).then(function(dbOrder) {
+      res.json(dbOrder);
+    });
+  });
+
+  app.get("/api/order-history", function(req, res) {
+    db.Order.findAll({
+      where: {
+        UserId: req.user.id,
+        sent: true
       },
       include: {
         model: [db.Product]
