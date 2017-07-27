@@ -1,4 +1,5 @@
 var db = require('../../models');
+var request = require("request");
 
 module.exports = function(app, passport) {
   app.get("/api/products", function(req, res) {
@@ -36,24 +37,30 @@ module.exports = function(app, passport) {
   });
 
   app.put("/api/order/product/", function(req, res) {
-    request(req.protocol + "://" + req.get('host') + "/api/products/" + req.body.productid, function(error, response, data){
-      if(error) throw(error);
       db.Order.findOrCreate({
         where: {
-          UserId: req.user.id,
+          UserId: req.body.userid,
           sent: false
         }
       }).then(function(dbOrder){
-        dbOrder.addProduct(data);
-        dbOrder.save();
+        db.Product.findOne({
+          where: {
+            id: req.body.productid
+          }
+        }).then(function(dbProduct){
+          dbProduct.addOrder(dbOrder[0]);
+        }).catch(function(err){
+          console.log(err);
+        })
+      }).catch(function(err){
+        console.log(err);
       });
-    });
   });
 
   app.put("/api/order/checkout", function(req, res) {
     db.Order.update({
       where: {
-        UserId: req.user.id
+        id: req.body.orderid
       }
     }, {
       sent: true
@@ -65,24 +72,25 @@ module.exports = function(app, passport) {
     });
   });
 
-  app.get("/api/ordered-product", function(req, res) {
+  app.get("/api/ordered-product/:id", function(req, res) {
     db.Order.findAll({
       where: {
-        UserId: req.user.id,
+        UserId: req.params.id,
         sent: false
       },
       include: {
-        model: [db.Product]
+        model: db.Product
       }
     }).then(function(dbOrder) {
+      console.log(dbOrder);
       res.json(dbOrder);
     });
   });
 
-  app.get("/api/order-history", function(req, res) {
+  app.get("/api/order-history/:id", function(req, res) {
     db.Order.findAll({
       where: {
-        UserId: req.user.id,
+        UserId: req.params.id,
         sent: true
       },
       include: {
@@ -114,10 +122,10 @@ module.exports = function(app, passport) {
     })
   })
 
-  app.put("/api/save-recommendation", function(req, res) {
+  app.put("/api/save-recommendation/:id", function(req, res) {
     db.Recommendation.create({
       text: req.body.text, 
-      UserId: req.user.id   
+      UserId: req.params.id   
     }).then(function(hold) {
       res.json(hold);
     })

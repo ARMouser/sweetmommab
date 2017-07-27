@@ -14,13 +14,13 @@
 
 
             <div class="cart">
-                <% order = JSON.parse(order) %>
                 <ul>
-                <% for (var i in order) { %>
-                    <li><%=order[i]%></li>
+                <% for (var i in order.Products) { %>
+                    <li><%=order.Products[i].name%></li>
                 <% } %>
                 </ul>
                 <form action="/api/order/checkout" method="put">
+                    <input type="hidden" name="orderid" value=<%=order.id%>
                     <input type="submit" value="Checkout" />
                 </form>
             </div>
