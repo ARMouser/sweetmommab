@@ -13,12 +13,17 @@ module.exports = function(app, passport) {
 	// });
 
 	app.get("/login", function(req, res){
-		res.render("login", {message: req.flash});
+		if (!req.user) {
+			res.render("login", {message: req.flash()});
+		}
+		else {
+			res.redirect("back");
+		}
 	});
 
 
 	app.get("/create", function(req, res){
-		res.render("create", {message:req.flash});
+		res.render("create", {message:req.flash()});
 	});
 
 
@@ -28,7 +33,7 @@ module.exports = function(app, passport) {
 	});
 
 	//Account creation
-	app.post("/create", function(req, res){
+	app.post("/account/create", function(req, res){
 		// db.User.findOne({
 		// 	where: {
 		// 		username: req.body.username
@@ -62,15 +67,15 @@ module.exports = function(app, passport) {
 				res.redirect("/login");
 			}
 		}).catch(function(err){
-			console.log(err);
+			req.flash("Username Taken.");
 		});
 	});
 
-	app.post("/login",
+	app.post("/account/login",
 		passport.authenticate("local", {
 			failureRedirect: "/login",
 			failureFlash: true
 		}), function(req, res) {
-			res.redirect("back");
+			res.redirect("/");
 	});
 }

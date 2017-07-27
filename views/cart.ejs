@@ -12,13 +12,17 @@
     <body>
     <%- include('partials/header') %>
 
-        <div class="userAccount">
-          <label><b>Username</b></label>
-
-        </div>
 
             <div class="cart">
-                <a href="#" class="modal">Click Here</a>
-                <img src="assets/images/____" id="checkout">
-                <input type="submit" value="Checkout">
+                <% order = JSON.parse(order) %>
+                <ul>
+                <% for (var i in order) { %>
+                    <li><%=order[i]%></li>
+                <% } %>
+                </ul>
+                <form action="/api/order/checkout" method="put">
+                    <input type="submit" value="Checkout" />
+                </form>
             </div>
+    </body>
+</html>

@@ -12,47 +12,22 @@
     <body>
       <div class="Logo">
       <%- include('partials/header') %>
-
-        <div class="userAccount">
-          <label><b>Username</b></label>
-
-        </div>
-
-            <div class="cart">
-              <img src="assets/images/____" id="cart">
-
-            </div>
                 <div class="optionDropdown">
                     <h2> More Options</h2>
-                      <h3>Cookies</h3>
-                            <ul>
-                                <li>Chocolate Chip </li>
-                                <li>Oatmeal Raisin</li>
-                                <li>Sugar</li>
-                                <li>Christmas Cookies</li>
-                            </ul>
-                      <h3>Cakes</h3>
-                          <ul>
-                            <li>Lemon Cake</li>
-                            <li>Chocolate Cake</li>
-                            <li>Carrot Cake</li>
-                            <li>Confetti Cake</li>
-                          </ul>
-                      <h3>Cookies</h3>
-                        <ul>
-                            <li>Whole Wheat</li>
-                            <li>Wonder Bread</li>
-                            <li>Italian Bread</li>
-                            <li>Italian Herb and Cheese</li>
-                        </ul>
                 </div>
           <div class="goodies">
             <h2 id="goodieTitle"></h2>
             <img src="assets/images/_____" id="goodieimg">
-          </div>
-
+            <% products = JSON.parse(products) %>
+            <% for (var i in products) { %>
+             <img class="foodpic" src=<%=products[i].photo %>
+             <ul class="product">
+              <li class="product-name"><%=products[i].name %></li>
+              <li class="product-desc"><%=products[i].description%></li>
+              <li class="price">$<%=products[i].price%></li>
+             </ul>
             <div id="goodieAmount">
-              </div>
+            </div>
               <div id="quanity">
               </div>
               <div id="customizableSection">
@@ -63,9 +38,16 @@
                   <li></li>
                 </ul>
               </div>
-              <div id="goodieSoundsGood">
-                <button type="button">Sounds Good</button>
+              <div id="addToCart">
+                <form action="/api/order/product" method="put">
+                  <input type="hidden" name="productid" value=<%=products[i].id%> />
+                  <input type="submit" value="Add to Cart" />
+                </form>
               </div>
+              <% } %>
+            </div>
+
+
 
     </body>
 

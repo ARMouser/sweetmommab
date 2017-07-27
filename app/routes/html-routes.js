@@ -1,48 +1,58 @@
 var path = require('path');
+var request = require('request');
 
 module.exports = function (app, passport) {
     app.get('/', function (req, res) {
-        res.render("index");
+        res.render("index", {user:req.user});
     });
 
     app.get('/about', function (req, res) {
-        res.render("about");
+        res.render("about", {user:req.user});
     });
     app.get('/order', function (req, res) {
-        res.render("order");
-    })
+        request(req.protocol + '://' + req.get('host') + '/api/products', function(error, response, data){
+            if (error) console.log(error);
+            res.render("order", {products:data, user:req.user});
+        });
+    });
     app.get('/contact', function (req, res) {
-        res.render("contact");
+        res.render("contact", {user:req.user});
     })
     app.get('/recommendations', function (req, res) {
-        res.render("recommendations");
-    })
+        request(req.protocol + '://' + req.get('host') + '/api/recommendations', function(error, response, data){
+            if (error) console.log(error);
+            res.render("recommendations", {rec:data, user:req.user});
+        });
+    });
     app.get('/submitGoodie', function (req, res) {
         if (!req.user) {
             res.redirect("/login")
         } else {
-            res.render("submitGoodie");
+            res.render("submitGoodie", {user:req.user});
         }
     })
     app.get('/cart', function (req, res) {
         if (!req.user) {
             res.redirect("/login")
         } else {
-            res.render("cart");
+            request(req.protocol + "://" +req.get('host') + '/api/ordered-product', function(error, response, data){
+                if (error) console.log(error);
+                res.render("cart", {user:req.user, order:data});
+            });
         }
     })
     app.get('/profile', function (req, res) {
         if (!req.user) {
             res.redirect("/login")
         } else {
-            res.render("profile");
+            res.render("profile", {user:req.user});
         }
     })
     app.get('/submitRecommendation', function (req, res) {
         if (!req.user) {
             res.redirect("/login")
         } else {
-            res.render("submitRecommendation");
+            res.render("submitRecommendation", {user:req.user});
         }
     })
 

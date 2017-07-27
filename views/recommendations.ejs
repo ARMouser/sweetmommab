@@ -12,10 +12,14 @@
   <body>
     <%- include('partials/header') %>
     <div class="container">
-        <% for(i in rec) { %>
+        <% rec = JSON.parse(rec) %>
+        <% for(var i in rec) { %>
             <div class="container">
                 <p><%=rec[i].text%></p>
             </div>
         <% } %>
+    </div>
+    <div>
+     <a href="/submitRecommendation" onClick="/submitRecommendation">Write Your Own</a>
     </div>
   </body>
