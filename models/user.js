@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
-				len: [1]
+				len: [1,20]
 			},
 			unique: true
 		},
@@ -25,7 +25,8 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
-				len: [1]
+				len: [1],
+				is: /^[\w]+$/
 			}
 		},
 
@@ -33,7 +34,7 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
-				len: [1, 72]
+				len: [1]
 			}
 		}
 	}, {
