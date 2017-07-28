@@ -1,12 +1,22 @@
 var db = require('../../models');
 var request = require("request");
 
-module.exports = function(app, passport) {
+module.exports = function(app) {
   app.get("/api/products", function(req, res) {
     db.Product.findAll({})
     .then(function(dbProduct) {
       res.json(dbProduct);
     });
+  });
+
+  app.get("/api/products/name", function(req, res) {
+    db.Product.findAll({
+      where: {
+        name: req.params.name
+      }
+    }).then(function(items) {
+      res.json(items)
+    })
   });
 
   app.get("/api/products/:id", function(req, res) {
@@ -115,7 +125,7 @@ module.exports = function(app, passport) {
   app.get("/api/recommendations_approval", function(req, res) {
     db.Recommendation.findAll({
       where: {
-        approval: false
+        approved: false
       }
     }).then(function(data) {
       res.json(data)

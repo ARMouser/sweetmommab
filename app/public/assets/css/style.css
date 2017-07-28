@@ -102,3 +102,55 @@ a:hover {
     color:#58c77b;
     text-decoration: underline;
 }
+
+#order {
+    width: 500px;
+    height: 250px;
+    margin: 20px;
+    border: grey solid 2px;
+    padding: 20px;
+}
+
+#orderList {
+    border-top: solid gray 2px;
+}
+
+#recs {
+    width:500px;
+    height:250px;
+    margin:20px;
+    padding:20px;
+    border: grey solid 2px;
+    position: relative;
+    top:-270px;
+    left:600px;
+}
+#recList {
+    border-top: solid gray 2px;
+}
+
+#admin-header {
+    margin-left: -80px
+}
+
+#add {
+    position:relative;
+    border: 2px grey solid;
+    padding:20px;
+    width: 1100px;
+    margin:20px;
+    top: -250px;
+}
+
+input {
+    padding:10px;
+}
+
+#search {
+    border:2px grey solid;
+    padding:20px;
+    position:relative;
+    width:1100px;
+    margin:20px;
+    top:-230px;
+}
