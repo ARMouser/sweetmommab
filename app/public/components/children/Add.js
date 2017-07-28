@@ -13,17 +13,20 @@ var Add = React.createClass({
        body: JSON.stringify(newOrder)
         });
     },
+    clearField: function() {
+        name.value = " "
+    },
     handleSubmit : function(event) {
         //handleSubmit takes the data upon adding a new product and sets it to the state, and then uses addOrder to post
         event.preventDefault();
         let newState ={
-            productName: event.target.productName.value,
+            name: event.target.productName.value,
             price: event.target.productPrice.value,
-            quantity: event.target.productQuantity.value,
+            description: event.target.productQuantity.value,
             customize: event.target.productCustomize.value,
-            img: event.target.productImg.value
+            photo: event.target.productImg.value
         }
-        this.setState(newState)
+        this.setState(newState);
         this.addOrder(newState);
     },
     render : function () {
