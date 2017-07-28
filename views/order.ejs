@@ -38,12 +38,15 @@
                   <li></li>
                 </ul>
               </div>
-              <div id="addToCart">
-                <form action="/api/order/product" method="put">
+              <% if(user) { %>
+                <div class="addToCart">
+                 <form action="/api/order/product" method="put">
                   <input type="hidden" name="productid" value=<%=products[i].id%> />
+                  <input type="hidden" name="userid" value=<%=user.id%> />
                   <input type="submit" value="Add to Cart" />
-                </form>
-              </div>
+                 </form>
+                </div>
+              <% } %>
               <% } %>
             </div>
 
