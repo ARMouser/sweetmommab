@@ -1,74 +1,37 @@
 body {
-    background-color: #d9f7f9;
+    background-color: #d9f7f9 !important;
     background-image:url(https://www.transparenttextures.com/patterns/arches.png);
+}
+.header-links {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 32px;
 }
 
 #smb {
     height:200px;
-    position:relative;
-    left:550px;
-    top:-35px;
 }
 
-h1 {
-    font-size:48px;
-    position:relative;
-    left:600px;
-    margin-top:60px;
-}
-
-ul {
-    padding:20px;
-    font-size:32px; 
-}
-
-header {
+.page-header {
     background-color: #fdcfcd;
     font-family: 'Raleway', sans-serif;
-    padding-top: 20px;
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    height: 150px;
+    height: 200px;
     opacity: .7;
-    width:1250px;
     border-bottom: 2px double;
 }
 
-#nav-top1, #nav-top2, #nav-top3, #nav-top4, #nav-top5, #nav-top6 {
-    position: relative;
-    opacity:.9;
-}
-
-#nav-top1 {
-    top:-180px;
-}
-
-#nav-top2 {
-    left:300px;
-    top:-210px;
-}
-
-#nav-top3 {
-    left:800px;
-    top:-240px;
-}
-
-#nav-top4 {
-    top:-270px;
-    left: 1100px
-}
-
 #nav-top5 {
-    top: -226px;
-    left: 1024px;
     font-size: 24px;
 }
 
 #nav-top6 {
-    top: -250px;
-    left: 1100px;
     font-size: 24px;
+}
+#cart-row {
+    border-bottom: 1px solid #ffdcda;
 }
 
 .filling {
@@ -91,7 +54,7 @@ footer {
 
 a:link {
     text-decoration: none;
-    color: black;
+    color: #55a36e;
 }
 
 a:visited {
@@ -102,7 +65,6 @@ a:hover {
     color:#58c77b;
     text-decoration: underline;
 }
-
 #order {
     width: 500px;
     height: 250px;
@@ -154,3 +116,19 @@ input {
     margin:20px;
     top:-230px;
 }
+#about-pic {
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin: 0px 10px 5px 0px;
+}
+#about-panel {
+    border: 1px solid #d9f7f9;
+    opacity: .8;
+    background-color: #fdcfcd;
+    margin-top: 40px;
+}
+#about-page-panel-headline {
+    margin: 20px 100px 50px 500px;
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
