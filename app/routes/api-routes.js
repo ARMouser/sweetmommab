@@ -92,7 +92,6 @@ module.exports = function(app) {
         model: db.Product
       }
     }).then(function(dbOrder) {
-      console.log(dbOrder);
       res.json(dbOrder);
     });
   });
@@ -104,9 +103,11 @@ module.exports = function(app) {
         sent: true
       },
       include: {
-        model: [db.Product]
+        model: db.Product
       }
     }).then(function(dbOrder) {
+      console.log(dbOrder);
+
       res.json(dbOrder);
     });
   });
@@ -121,6 +122,18 @@ module.exports = function(app) {
       res.json(dbRec);
     });
   });
+
+  app.get("/api/recommendations-history/:id", function(req, res){
+    db.Recommendation.findAll({
+      where: {
+        approved: true,
+        UserId: req.params.id
+      }
+    }).then(function(data){
+      console.log(data);
+      res.json(data);
+    });
+  })
 
   app.get("/api/recommendations_approval", function(req, res) {
     db.Recommendation.findAll({
