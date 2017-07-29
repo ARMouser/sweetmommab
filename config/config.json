@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "90sRock!",
+    "password": "taito",
     "database": "smb",
     "host": "127.0.0.1",
     "dialect": "mysql"

@@ -1,5 +1,6 @@
 import React from "react";
 var Link = require("react-router").Link;
+var ReactDOM = require('react-dom');
 
 var Add = React.createClass({
     addOrder : function(newOrder) {
@@ -14,7 +15,7 @@ var Add = React.createClass({
         });
     },
     clearField: function() {
-        name.value = " "
+        document.getElementById("addForm").reset();
     },
     handleSubmit : function(event) {
         //handleSubmit takes the data upon adding a new product and sets it to the state, and then uses addOrder to post
@@ -28,6 +29,7 @@ var Add = React.createClass({
         }
         this.setState(newState);
         this.addOrder(newState);
+        this.clearField();
     },
     render : function () {
         return (
@@ -35,7 +37,7 @@ var Add = React.createClass({
                 <h2>
                     Add New Content
                 </h2>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit} id="addForm">
                         <input type="text" placeholder="Name" id="productName" />
                         <input type="text" placeholder="Price" id="productPrice" />
                         <input type="text" placeholder="Quantity" id="productQuantity" />
