@@ -10,16 +10,17 @@ var Main = React.createClass({
         return (
             <div>
                 <div id="header">
-                    <h1>
+                    <h1 id="admin-header">
                         Admin
                     </h1>
                     <hr />
                 </div>
 
+                <Order />
+                <Rec />
                 <Add />
                 <Search />
-                <Rec />
-                <Order />
+
             </div>
         );
     }

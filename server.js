@@ -66,7 +66,7 @@ app.get('/admin', function(req, res) {
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 
-db.sequelize.sync({}).then(function() {
+db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
         console.log("Baking good on: " + PORT);
     });
