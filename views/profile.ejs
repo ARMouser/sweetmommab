@@ -13,22 +13,38 @@
     <%- include('partials/header') %>
 
         <div class="profile">
-          <label><b>Username</b></label>
-              Name: <input type="text" name="Name" value="">
-              Email: <input type="text" name="Email" value="">
+          <label><b><%=user.username%></b></label>
+              Name: <input type="text" name="Name" value=<%=user.name%> >
+              Email: <input type="text" name="Email" value=<%=user.email%> >
         </div>
 
         <div class="pastorders">
-          - Orders in the past
+          Past Orders
           <a href="orders">
+          <% if(orders) { %>
+           <% for(var i in orders) { %>
             <span>
+            <% for(var j in orders[i].Products) { %>
+              <% var product = orders[i].Products[j] %>
+              <%=product.name%>
+              <% } %>
             </span>
+           <% } %>
+          <% } %>
           </a>
         </div>
+
         <div class="pastRec">
-          - Recommendations
+          Recommendations
           <a href="rec">
-            <span>
-            </span>
+            <% if (recs) { %>
+            <% for (var i in recs) { %>
+              <span>
+                <%=recs[i].text%>
+              </span>
+            <% } %>
+            <% } %>
           </a>
         </div>
+  </body>
+</html>
