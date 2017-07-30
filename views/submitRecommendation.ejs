@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Sweet Momma Bs
-        </title>
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    </head>
-    <body>
+
+<head>
+    <title>
+        Sweet Momma Bs
+    </title>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
     <%- include('partials/header') %>
-
         <div class="userAccount">
-          <label><b>Username</b></label>
+            <label><b>Username</b></label>
         </div>
-
-            <div class="cart">
-              <img src="assets/images/____" id="cart">
-
-            </div>
-              <div id="recommendationBox">
-                <img src="assets/images/______">
-                <form action="/api/save-recommendation" method="post">
-                  <input type="hidden" name="id" value=<%user.id%>
-                  <input type="text" placeholder="description" name="text">
-                  <input type="submit">Submit Your Own</input>
-                </form>
-
-
-      </body>
+        <div class="cart">
+            <img src="assets/images/____" id="cart">
+        </div>
+        <div id="recommendationBox">
+            <img src="assets/images/______">
+            <form action="/api/save-recommendation" method="post">
+                <input type="hidden" name="id" value=<%user.id%>
+                <input type="text" placeholder="description" name="text">
+                <input type="submit">Submit Your Own</input>
+            </form>
+            <script src="assets/javascript/app.js"></script>
+</body>
 
 </html>

@@ -9,25 +9,21 @@
            
         </ul>
 </div> -->
-<div class="page-header container-fluid">
+<div class="header container-fluid">
     <div class="row">
-	    <div class="col-md-5 header-links">
-	    	<span id="header-link1"><a href="/about">About Momma</a></span>
-	    	<span id="header-link2"> <a href='/order'>| Goodies</a></span>
-	    </div>
-	    <div class="col-md-2">
-	    	<a href='/'><img src="/assets/images/smb.png" id='smb'></a>
-	    </div>
-	    <div class="col-md-5 header-links">
-			<span id="header-link3"><a href='/recommendations'>Recommendations   </a></span>
-			<span id="header-link4"><a href='/contact'>| Contact</a></span>
-		</div> 
-	</div>
-</div>
-<div class="row" id="cart-row">
-	<div class="col-md-2 col-md-offset-10">
-		<div id="account-header-link">
-			<%- include('account') %>
-		</div>
-	</div>
+        <div class="col-md-5 header-links-container">
+            <a class="header-links" href="/about">About Momma</a>
+            <a class="header-links" href='/order'> Goodies</a>
+        </div>
+        <div class="col-md-2">
+            <a href='/'><img src="/assets/images/smb.png" id='smb'></a>
+        </div>
+        <div class="col-md-5 header-links-container">
+            <a class="header-links" href='/recommendations'>Recommendations</a>
+            <a class="header-links" href='/contact'> Contact</a>
+            <div id="account-header-link">
+                <%- include('account') %>
+            </div>
+        </div>
+    </div>
 </div>

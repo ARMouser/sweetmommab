@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title> Sweet Momma B's </title>
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  </head>
-        <body>
-        <%- include('partials/header') %>
+</head>
 
-            <div class="userAccount">
-              <label><b>Username</b></label>
-            </div>
-
-                <div class="cart">
-                  <img src="assets/images/____" id="cart">
-
-                </div>
-                  <div id="recommendationBox">
-                    <img src="assets/images/______">
-                    <input type="text" placeholder="description" value="">
-
-                  </div>
-                      <button type="button">Submit Your Own</button>
-
-      <!-- Modal Trigger -->
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Recommendation</a>
-
-      <!-- Modal Structure -->
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-          <h4>Please Complete your Recommendation</h4>
-          <p></p>
+<body>
+    <%- include('partials/header') %>
+        <div class="userAccount">
+            <label><b>Username</b></label>
         </div>
+        <div class="cart">
+            <img src="assets/images/____" id="cart">
+        </div>
+        <div id="recommendationBox">
+            <img src="assets/images/______">
+            <input type="text" placeholder="description" value="">
+        </div>
+        <button type="button">Submit Your Own</button>
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Recommendation</a>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Please Complete your Recommendation</h4>
+                <p></p>
+            </div>
         </div>
         <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
         </div>
-    </body>
+        <script src="assets/javascript/app.js"></script>
+</body>
+
 </html>
