@@ -30,7 +30,8 @@ module.exports = function (app, passport) {
         } else {
             res.render("submitGoodie", {user:req.user});
         }
-    })
+    });
+
     app.get('/cart', function (req, res) {
         if (!req.user) {
             res.redirect("/login")
@@ -42,20 +43,31 @@ module.exports = function (app, passport) {
                 res.render("cart", {user:req.user, order:data[0]});
             });
         }
-    })
+    });
+
     app.get('/profile', function (req, res) {
         if (!req.user) {
             res.redirect("/login")
         } else {
-            res.render("profile", {user:req.user});
+            request(req.protocol + "://" + req.get('host') + '/api/order-history/' + req.user.id, function(error, response, orders){
+                if (error) console.log(error);
+                request(req.protocol + "://" + req.get('host') + '/api/recommendations-history/' + req.user.id, function(error, response, recs){
+                    if (error) console.log(error);
+                    orders = JSON.parse(orders);
+                    recs = JSON.parse(recs);
+                    res.render("profile", {user:req.user, orders:orders, recs:recs});
+
+                });
+            });
         }
-    })
+    });
+
     app.get('/submitRecommendation', function (req, res) {
         if (!req.user) {
             res.redirect("/login")
         } else {
             res.render("submitRecommendation", {user:req.user});
         }
-    })
+    });
 
 };

@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false,
 			validate: {
 				len: [1],
-				is: /^[\w]+[@]{1}[\w]+[.]{1}[a-z]+$/i //match things that look like a valid email
+				is: /^[\w.]+[@]{1}[\w.]+[.]{1}[a-z.]+$/i //match things that look like a valid email
 			}
 		},
 

@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Sweet Momma Bs
-        </title>
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    </head>
-    <body>
+
+<head>
+    <title>
+        Sweet Momma Bs
+    </title>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
     <%- include('partials/header') %>
-
         <div class="profile">
-          <label><b>Username</b></label>
-              Name: <input type="text" name="Name" value="">
-              Email: <input type="text" name="Email" value="">
+            <label><b><%=user.username%></b></label>
+            Name:
+            <input type="text" name="Name" value=<%=user.name%> > Email:
+            <input type="text" name="Email" value=<%=user.email%> >
         </div>
-
         <div class="pastorders">
-          - Orders in the past
-          <a href="orders">
-            <span>
+            Past Orders
+            <a href="orders">
+                <% if(orders) { %>
+                    <% for(var i in orders) { %>
+                        <span>
+            <% for(var j in orders[i].Products) { %>
+              <% var product = orders[i].Products[j] %>
+              <%=product.name%>
+              <% } %>
             </span>
-          </a>
+                        <% } %>
+                            <% } %>
+            </a>
         </div>
         <div class="pastRec">
-          - Recommendations
-          <a href="rec">
-            <span>
-            </span>
-          </a>
+            Recommendations
+            <a href="rec">
+                <% if (recs) { %>
+                    <% for (var i in recs) { %>
+                        <span>
+                <%=recs[i].text%>
+              </span>
+                        <% } %>
+                            <% } %>
+            </a>
         </div>
+</body>
+
+</html>

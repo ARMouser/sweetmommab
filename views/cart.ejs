@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Sweet Momma Bs
-        </title>
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    </head>
-    <body>
+
+<head>
+    <title>
+        Sweet Momma Bs
+    </title>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
     <%- include('partials/header') %>
-
-
-            <div class="cart">
-                <ul>
+        <div class="cart">
+            <% if (order.Products)  { %>
+            <ul>
                 <% for (var i in order.Products) { %>
                     <li><%=order.Products[i].name%></li>
+                    <li><%=order.Products[i].price%></li>
+                    <li><%=order.Products[i].OrderProducts.quantity%></li>
                 <% } %>
-                </ul>
-                <form action="/api/order/checkout" method="put">
-                    <input type="hidden" name="orderid" value=<%=order.id%>
-                    <input type="submit" value="Checkout" />
-                </form>
-            </div>
-    </body>
+            </ul>
+            <form action="/api/order/checkout" method="put">
+                <input type="hidden" name="orderid" value=<%=order.id%>
+                <input type="submit" value="Checkout" />
+            </form>
+            <% } %>
+        </div>
+        <script src="assets/javascript/app.js"></script>
+</body>
+
 </html>

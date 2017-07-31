@@ -1,8 +1,7 @@
 <% if (!user) { %>
-  <span id='nav-top5'><a href="/login">Login</a> | </span>
-  <span id='nav-top6'><a href="/create">Sign Up</a></span>
-<% } else { %>
-  <span id='nav-top5'><a href="/profile"><%=user.username%></a> | </span>
-  <span id='nav-top6'><a href="/cart">Cart</a></span>
- <% } %>
-
+    <span id='nav-top5'><a class="header-links" href="/login">Login</a> | </span>
+    <span id='nav-top6'><a class="header-links" href="/create">Sign Up</a></span>
+    <% } else { %>
+        <span id='nav-top5'><a class="header-links" href="/profile"><%=user.username%></a> | </span>
+        <span id='nav-top6'><a class="header-links" href="/cart">Cart</a></span>
+        <% } %>
