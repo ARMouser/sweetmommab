@@ -1,6 +1,7 @@
 body {
-    background-color: #d9f7f9 !important;
+    background-color: #F5B3AF !important;
     background-image:url(https://www.transparenttextures.com/patterns/arches.png);
+
 }
 .header-links {
     margin-top: 60px;
@@ -13,13 +14,12 @@ body {
 }
 
 .page-header {
-    background-color: #fdcfcd;
+    background-color: white;
     font-family: 'Raleway', sans-serif;
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
     height: 200px;
-    opacity: .7;
     border-bottom: 2px double;
 }
 
@@ -132,3 +132,36 @@ input {
     margin: 20px 100px 50px 500px;
     font-size: 50px;
     font-family: 'Raleway', sans-serif;
+
+}
+#usernameInput{
+  margin-top: 20px;
+  margin-left: 550px;
+}
+
+#logo-Login{
+  margin-left: 550px;
+
+}
+#passwordInput{
+  margin-left: 550px;
+
+}
+#login-btn{
+  margin-left: 565px;
+  color: #F5B3AF;
+  border-color: none;
+  background-color: white;
+  width: 140px;
+  margin-top: 20px;
+
+}
+#guest-btn{
+  margin-left: 565px;
+  color: #F5B3AF;
+  border-color: none;
+  background-color: white;
+  width: 140px;
+  margin-top: 20px;
+
+}

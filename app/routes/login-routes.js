@@ -34,6 +34,7 @@ module.exports = function(app, passport) {
 
 	//Account creation
 	app.post("/account/create", function(req, res){
+		// console.log("HIT ACCOUNT CREATE");
 		// db.User.findOne({
 		// 	where: {
 		// 		username: req.body.username
@@ -62,12 +63,15 @@ module.exports = function(app, passport) {
 			password: req.body.password,
 			email: req.body.email
 		}).then(function(user){
+			// console.log("HIT USER CREATE ENDPOINT");
+			// console.log(user);
 			if (!user) console.log("some problem here");
 			else {
 				res.redirect("/login");
 			}
 		}).catch(function(err){
 			req.flash("Username Taken.");
+			console.log(err);
 			res.redirect("/create");
 		});
 	});
