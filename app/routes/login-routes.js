@@ -30,6 +30,8 @@ module.exports = function(app, passport) {
 			password: req.body.password,
 			email: req.body.email
 		}).then(function(user){
+			// console.log("HIT USER CREATE ENDPOINT");
+			// console.log(user);
 			if (!user) console.log("some problem here");
 			else {
 				res.redirect("/login");
