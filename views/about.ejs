@@ -1,37 +1,64 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Sweet Momma Bs
-        </title>
-        
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        
-        <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    </head>
-   <body>
-      
-          <%- include('partials/header') %>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="panel panel-default" id="about-panel">
-                  <div class="panel-body">
-                    <img src="/assets/images/IMG_1435.jpg" id="about-pic">
-                    <h1 id="about-page-panel-headline">Meet the Baker</h1>
-                    <p>Carrot cake dessert oat cake chocolate cake caramels tart marshmallow pie. Pudding topping halvah jelly beans soufflé apple pie sweet roll cheesecake cotton candy. Powder sweet roll jelly-o powder. Cotton candy chocolate ice cream gummies gummies marzipan donut croissant. Jelly beans fruitcake apple pie oat cake lemon drops tiramisu. Wafer lollipop macaroon bear claw pastry cheesecake tart tootsie roll. Chocolate bar gummies croissant soufflé danish candy. Sugar plum oat cake candy biscuit jelly sugar plum sesame snaps gingerbread danish. Tootsie roll wafer muffin. Dessert topping gummi bears bear claw marzipan cheesecake liquorice croissant. Apple pie gummies icing chocolate bar. Marzipan cookie danish lollipop. Chupa chups liquorice dessert cake cupcake toffee. Croissant sweet jelly beans sugar plum cupcake.
-                    Jelly beans dragée bear claw sesame snaps sweet wafer. Dessert pie caramels candy canes biscuit sugar plum soufflé cake. Jujubes bonbon cupcake dragée oat cake cake. Liquorice dragée macaroon croissant carrot cake croissant. Apple pie ice cream sweet marshmallow dragée gingerbread powder sugar plum jelly. Cookie wafer caramels donut. Topping jelly gingerbread tart wafer powder. Dragée sesame snaps lemon drops tart cake jelly-o soufflé muffin. Icing halvah tart jelly-o oat cake. Fruitcake muffin sugar plum gummies biscuit candy canes donut chupa chups pie. Caramels caramels lollipop gummi bears cheesecake dragée macaroon cotton candy pie. Tiramisu wafer jelly chocolate biscuit sweet sesame snaps. Jelly beans cotton candy muffin soufflé liquorice cotton candy jelly chocolate bar cheesecake.
-                    Candy canes chocolate cake wafer sugar plum toffee bear claw jelly beans brownie. Croissant cupcake icing soufflé. Sweet lollipop carrot cake. Apple pie caramels powder halvah muffin. Muffin danish dessert cake liquorice danish candy canes. Gummi bears sesame snaps sweet pastry cheesecake jelly beans liquorice sesame snaps toffee. Apple pie gummies ice cream bonbon marzipan wafer jelly oat cake bear claw. Sweet roll biscuit brownie soufflé lemon drops cheesecake oat cake halvah cookie. Cotton candy tart sugar plum macaroon sugar plum soufflé cookie. Dragée pudding cake dessert chocolate bar tiramisu soufflé cheesecake pudding. Marzipan apple pie jelly jelly beans cake powder cookie. Wafer donut cotton candy pie. Jelly beans jelly-o dragée lollipop toffee candy canes jujubes. Sesame snaps candy canes lemon drops pastry cookie.
-                    Oat cake sweet roll jelly-o wafer sesame snaps liquorice jelly beans powder cupcake. Marzipan lemon drops dragée bonbon jujubes bonbon. Apple pie pie lollipop dragée jelly-o chocolate pastry cookie cotton candy. Gummi bears candy lemon drops gummies apple pie lollipop donut gummi bears danish. Candy pastry sesame snaps icing gingerbread tiramisu. Chocolate candy canes macaroon donut marzipan topping muffin cheesecake. Fruitcake donut gingerbread cake fruitcake apple pie. Danish toffee gummies muffin chocolate lemon drops toffee icing powder. Jujubes sugar plum soufflé biscuit sweet roll cake. Lollipop icing marshmallow cheesecake candy canes. Ice cream biscuit sugar plum jelly-o cheesecake caramels pastry marzipan. Tart cake tart gummies sugar plum marshmallow pie. Donut sweet roll marzipan liquorice topping pie. Dragée pastry macaroon gummi bears.
-                    Marzipan chocolate bar danish danish. Cookie chupa chups croissant lollipop topping cotton candy candy canes. Pudding icing ice cream donut cheesecake carrot cake. Sweet roll toffee toffee candy tootsie roll topping sweet roll chocolate. Icing topping tootsie roll jelly beans ice cream wafer. Chocolate cake tootsie roll muffin liquorice jelly icing. Danish cake tootsie roll. Chupa chups cake croissant fruitcake chocolate caramels cake sweet brownie. Donut chocolate cake topping lollipop biscuit powder. Topping marzipan chupa chups tart topping powder. Bear claw tart pastry fruitcake wafer bonbon marzipan lemon drops liquorice. Biscuit pastry sugar plum.</p>
 
-                  </div>
+<head>
+    <title>
+        Sweet Momma Bs
+    </title>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('partials/header') %>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="carousel-panel">
+                        <div class="content-area">
+                            <div id="myCarousel" class="carousel slide">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                </ol>
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="/assets/images/carousel-images/girls.jpg" class="carousel-img">
+                                    </div>
+                                    <div class="item">
+                                        <img src="/assets/images/carousel-images/IMG_1435.jpg" class="carousel-img">
+                                    </div>
+                                    <div class="item">
+                                        <img src="/assets/images/carousel-images/doughnuts.jpg" class="carousel-img">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="icon-prev"></span></a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="icon-next"></span></a>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="col-lg-6">
+                    <div class="panel panel-default" id="about-panel">
+                        <div class="panel-body">
+                            <h1 id="about-panel-title">Sweet Momma B's Founder</h1>
+                            <p>
+                                Lollipop jelly-o ice cream biscuit caramels. Gummies lemon drops cake jelly beans bear claw chocolate cake gummies gummi bears chocolate bar. Topping chupa chups sweet roll muffin croissant sweet. Tootsie roll dragée tootsie roll caramels pie powder bear claw. Tart jelly beans gingerbread cotton candy. Apple pie muffin donut cupcake chocolate cake. Wafer halvah gummies ice cream. Icing topping biscuit candy. Halvah sesame snaps gummies muffin bear claw muffin tiramisu dragée jelly-o. Chupa chups pudding jelly-o marzipan dragée dragée pie. Topping bonbon cupcake tootsie roll wafer. Jelly-o jujubes chupa chups cookie chocolate sweet. Chocolate bar tart danish pastry liquorice. Apple pie tart jelly beans. Cotton candy tart liquorice cake pudding ice cream cupcake. Chocolate jelly beans croissant jelly pudding gingerbread. Cake biscuit liquorice marshmallow macaroon cupcake. Candy canes candy soufflé fruitcake chocolate jelly sugar plum apple pie. Marshmallow sweet roll donut dessert halvah dragée. Chocolate bar candy pastry bear claw danish apple pie sesame snaps marshmallow chocolate bar. Pie jelly donut chupa chups. Soufflé soufflé tootsie roll caramels tootsie roll wafer. Candy ice cream wafer cookie icing dessert soufflé jujubes wafer. Powder danish croissant. Toffee caramels apple pie tootsie roll powder lemon drops tiramisu tiramisu. Jelly-o brownie ice cream tart cookie.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-   </body>
+        </div>
+        <script src="assets/javascript/app.js"></script>
+</body>
+
 </html>

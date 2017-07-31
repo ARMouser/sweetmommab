@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Sweet Momma Bs
-        </title>
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    </head>
-    <body>
+
+<head>
+    <title>
+        Sweet Momma Bs
+    </title>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
     <%- include('partials/header') %>
-
         <div class="userAccount">
-          <label><b>Username</b></label>
-
+            <label><b>Username</b></label>
         </div>
-
-            <div class="cart">
-              <img src="assets/images/____" id="cart">
-
-            </div>
-      <div class="goodieDisplay">
-        <h3 id="goodieName"></h3>
-
-        <img src="assets/images/____">
-        <form action="/action_page.php">
-                How Many: <input type="text" name="How Many" value=""><br>
-                Customize: <input type="text" name="Customize" value=""><br>
-                When: <input type="text" name="When" value=""><br>
-                Price: <input type="number" name="Price" value=""><br>
-
+        <div class="cart">
+            <img src="assets/images/____" id="cart">
+        </div>
+        <div class="goodieDisplay">
+            <h3 id="goodieName"></h3>
+            <img src="assets/images/____">
+            <form action="/action_page.php">
+                How Many:
+                <input type="text" name="How Many" value="">
+                <br> Customize:
+                <input type="text" name="Customize" value="">
+                <br> When:
+                <input type="text" name="When" value="">
+                <br> Price:
+                <input type="number" name="Price" value="">
+                <br>
                 <input type="submit" value="Sumbit Goods">
-                </form>
+            </form>
+        </div>
+        <script src="assets/javascript/app.js"></script>
+</body>
 
-      </div>
-    </body>
 </html>

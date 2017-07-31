@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Sweet Momma Bs
-        </title>
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    </head>
-  <body>
-      <div class="login">
-            <img src="/assets/images/smb.png" id='smb'>
 
-      </div>
-        <div class="enterlogin">
-          <form action="/account/login" method="post">
+<head>
+    <title>
+        Sweet Momma Bs
+    </title>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="login">
+        <img src="/assets/images/smb.png" id='smb'>
+    </div>
+    <div class="enterlogin">
+        <form action="/account/login" method="post">
             <div>
-               <input type="text" name="username" placeholder="Username" /><br/>
+                <input type="text" name="username" placeholder="Username" />
+                <br/>
             </div>
             <div>
-               <input type="password" name="password" placeholder="Password" />
-             </div>
-             <% if(message.error) {%>
-             <p><%=message.error%></p>
-           <% } %>
-           <div>
-             <input type="submit" value="Login"/>
+                <input type="password" name="password" placeholder="Password" />
             </div>
-          </form>
-        </div>
+            <% if(message.error) {%>
+                <p>
+                    <%=message.error%>
+                </p>
+                <% } %>
+                    <div>
+                        <input type="submit" value="Login" />
+                    </div>
+        </form>
+    </div>
+    <script src="assets/javascript/app.js"></script>
+</body>
 
-      </body>
 </html>

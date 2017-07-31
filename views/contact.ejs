@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Sweet Momma Bs
-        </title>
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    </head>
-    <body>
+
+<head>
+    <title>
+        Sweet Momma Bs
+    </title>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
     <%- include('partials/header') %>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img src="/assets/images/contact-images/phone-image.jpg" id="phone-img">
+                    <h1 id="contact-panel-title">Reach Out!</h1>
+                    <div id="phone-email-contact-div">
+                        <h2>919-867-5309</h2>
+                        <br>
+                        <h2>sweetmommab@gmail.com</h2>
+                    </div>
+                    <div>
+                        <a href="https//www.facebook.com/sweetmommabs"><img id="facebook-icon" src="/assets/images/contact-images/facebook-icon.jpg"></a>
+                        <a href="https//www.instagram.com/sweetmommabs"><img id="instagram-icon" src="/assets/images/contact-images/instagram-logo.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="assets/javascript/app.js"></script>
+</body>
 
-
-
-        <div class="reachOut">
-          Facebook: <input type="text" name="Facebook" value="">
-          Instagram: <input type="text" name="Instagram" value="">
-
-       </div>
+</html>

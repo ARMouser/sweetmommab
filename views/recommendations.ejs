@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Sweet Momma Bs
-        </title>
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    </head>
-  <body>
+
+<head>
+    <title>
+        Sweet Momma Bs
+    </title>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
     <%- include('partials/header') %>
-    <div class="container">
-        <% rec = JSON.parse(rec) %>
-        <% for(var i in rec) { %>
-            <div class="container">
-                <p><%=rec[i].text%></p>
-            </div>
-        <% } %>
-    </div>
-    <div>
-     <a href="/submitRecommendation" onClick="/submitRecommendation">Write Your Own</a>
-    </div>
-  </body>
+        <div class="container">
+            <% rec = JSON.parse(rec) %>
+                <% for(var i in rec) { %>
+                    <div class="container">
+                        <p>
+                            <%=rec[i].text%>
+                        </p>
+                    </div>
+                    <% } %>
+        </div>
+        <div>
+            <a href="/submitRecommendation" onClick="/submitRecommendation">Write Your Own</a>
+        </div>
+        <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>
+</body>

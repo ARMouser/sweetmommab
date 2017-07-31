@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Sweet Momma Bs
-        </title>
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    </head>
-  <body>
-      <div class="loginForm">
-        <img src="assets/Images/_____" id="smb">
-      <form action="/account/create" method="post">
-        Username: <input type="text" placeholder="Username" name="username">
-        Password: <input type="text" placeholder="Password" name="password">
-        Name: <input type="text" placeholder="Name" name="name">
-        Email: <input type="email" placeholder="Email" name="email">
-        <input type="submit" id="login-btn">Create Account</input>
-      </form>
-      <% if(message.error) { %>
-        <p><%=message.error%></p>
-        <% } %>
-    </div>
-  </body>
 
+<head>
+    <title>
+        Sweet Momma Bs
+    </title>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="loginForm">
+        <img src="assets/Images/_____" id="smb">
+        <form action="/account/create" method="post">
+            Username:
+            <input type="text" placeholder="Username" name="username"> Password:
+            <input type="text" placeholder="Password" name="password"> Name:
+            <input type="text" placeholder="Name" name="name"> Email:
+            <input type="email" placeholder="Email" name="email">
+            <input type="submit" id="login-btn">Create Account</input>
+        </form>
+        <% if(message.error) { %>
+            <p>
+                <%=message.error%>
+            </p>
+            <% } %>
+    </div>
+    <script src="assets/javascript/app.js"></script>
+</body>
 
 </html>
