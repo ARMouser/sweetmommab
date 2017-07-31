@@ -15,17 +15,19 @@
 <body>
     <%- include('partials/header') %>
         <div class="cart">
+            <% if (order.Products)  { %>
             <ul>
                 <% for (var i in order.Products) { %>
-                    <li>
-                        <%=order.Products[i].name%>
-                    </li>
-                    <% } %>
+                    <li><%=order.Products[i].name%></li>
+                    <li><%=order.Products[i].price%></li>
+                    <li><%=order.Products[i].OrderProducts.quantity%></li>
+                <% } %>
             </ul>
             <form action="/api/order/checkout" method="put">
                 <input type="hidden" name="orderid" value=<%=order.id%>
                 <input type="submit" value="Checkout" />
             </form>
+            <% } %>
         </div>
         <script src="assets/javascript/app.js"></script>
 </body>

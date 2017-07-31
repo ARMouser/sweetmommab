@@ -30,7 +30,8 @@ module.exports = function (app, passport) {
         } else {
             res.render("submitGoodie", {user:req.user});
         }
-    })
+    });
+
     app.get('/cart', function (req, res) {
         if (!req.user) {
             res.redirect("/login")
@@ -42,7 +43,8 @@ module.exports = function (app, passport) {
                 res.render("cart", {user:req.user, order:data[0]});
             });
         }
-    })
+    });
+
     app.get('/profile', function (req, res) {
         if (!req.user) {
             res.redirect("/login")
@@ -58,13 +60,14 @@ module.exports = function (app, passport) {
                 });
             });
         }
-    })
+    });
+
     app.get('/submitRecommendation', function (req, res) {
         if (!req.user) {
             res.redirect("/login")
         } else {
             res.render("submitRecommendation", {user:req.user});
         }
-    })
+    });
 
 };
