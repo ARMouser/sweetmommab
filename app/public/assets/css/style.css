@@ -215,7 +215,7 @@ input {
 
 }
 #login-btn{
-  margin-left: 565px;
+  margin-left: 585px;
   color: #F5B3AF;
   border-color: none;
   background-color: white;
@@ -256,4 +256,17 @@ input {
     height: 100px;
     width: 100px;
     margin-top: 15px;
+}
+#createUsername{
+  margin-left: 565px;
+
+}
+#createPassword{
+  margin-left: 565px;
+}
+#inputName{
+  margin-left: 565px;
+}
+#inputEmail{
+  margin-left: 565px;
 }
