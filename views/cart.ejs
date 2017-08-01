@@ -24,7 +24,7 @@
                 <% } %>
             </ul>
             <form action="/api/order/checkout" method="put">
-                <input type="hidden" name="orderid" value=<%=order.id%>
+                <input type="hidden" name="orderid" value=<%=order.id%>>
                 <input type="submit" value="Checkout" />
             </form>
             <% } %>

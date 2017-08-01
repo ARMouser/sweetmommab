@@ -16,7 +16,7 @@ module.exports = function(app) {
             }
         }).then(function(items) {
             res.json(items)
-        })
+        });
     });
 
     app.get("/api/products/:id", function(req, res) {
@@ -81,6 +81,7 @@ module.exports = function(app) {
     }).catch(function(err){
       console.log(err);
     });
+  });
 
     app.put("/api/order/checkout", function(req, res) {
         db.Order.update({
@@ -152,7 +153,7 @@ module.exports = function(app) {
             console.log(data);
             res.json(data);
         });
-    })
+    });
 
     app.get("/api/recommendations_approval", function(req, res) {
         db.Recommendation.findAll({
@@ -161,20 +162,18 @@ module.exports = function(app) {
             }
         }).then(function(data) {
             res.json(data)
-        })
-  })
+        });
+    });
 
     app.post("/api/save-recommendation", function(req, res) {
         console.log(req.body.id)
         db.Recommendation.create({
             text: req.body.text,
             UserId: req.body.id
-
         }).then(function(hold) {
-
             res.redirect("/recommendations")
         }).catch(function(err) {
             console.log(err)
-        })
-    })
-}
+        });
+    });
+};
