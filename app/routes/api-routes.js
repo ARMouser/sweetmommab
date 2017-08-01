@@ -46,7 +46,7 @@ module.exports = function(app) {
     });
   });
 
-  app.put("/api/order/product/", function(req, res) {
+  app.post("/api/order/product/", function(req, res) {
       db.Order.findOrCreate({
         where: {
           UserId: req.body.userid,
@@ -59,6 +59,7 @@ module.exports = function(app) {
           }
         }).then(function(dbProduct){
           dbProduct.addOrder(dbOrder[0]);
+          res.redirect("/order");
         }).catch(function(err){
           console.log(err);
         })
@@ -117,7 +118,10 @@ module.exports = function(app) {
       limit: 10,
       where: {
         approved: true
-      } 
+      },
+      include: {
+        model: db.User
+      }
     }).then(function(dbRec) {
       res.json(dbRec);
     });
@@ -145,12 +149,12 @@ module.exports = function(app) {
     })
   })
 
-  app.put("/api/save-recommendation/:id", function(req, res) {
+  app.put("/api/save-recommendation/", function(req, res) {
     db.Recommendation.create({
       text: req.body.text, 
-      UserId: req.params.id   
+      UserId: req.body.id   
     }).then(function(hold) {
-      res.json(hold);
+      res.redirect("/recommendations");
     })
   })
 }

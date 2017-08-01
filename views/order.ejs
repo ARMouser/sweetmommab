@@ -49,7 +49,7 @@
                         </div>
                         <% if(user) { %>
                             <div class="addToCart">
-                                <form action="/api/order/product" method="put">
+                                <form action="/api/order/product" method="post">
                                     <input type="hidden" name="productid" value=<%=products[i].id%> />
                                     <input type="hidden" name="userid" value=<%=user.id%> />
                                     <input type="submit" value="Add to Cart" />
