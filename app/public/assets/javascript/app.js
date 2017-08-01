@@ -8,3 +8,9 @@ $(document).ready(function() {
     })
 
 });
+$("#show-subrecmodal-btn").click(function() {
+    $("#submit-rec-modal").modal("show");
+});
+$("#subrecmodal-submit-btn").click(function(event) {
+    // event.preventDefault()
+})

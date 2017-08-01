@@ -230,9 +230,6 @@ input {
   background-color: white;
   width: 140px;
   margin-top: 20px;
-
-}
-=======
 }
 
 #phone-img {
@@ -257,3 +254,11 @@ input {
     width: 100px;
     margin-top: 15px;
 }
+
+#subrecmodal-text-input {
+    height: 200px;
+    width: 80%;
+    margin: 0% 10%;
+}
+
+
