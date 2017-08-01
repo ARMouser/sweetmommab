@@ -1,8 +1,4 @@
-body {
-    background-color: #F5B3AF !important;
-
-}
-.header-links {
+.header-links-container {
     margin-top: 60px;
     text-align: center;
     font-size: 32px;
@@ -11,15 +7,72 @@ body {
 #smb {
     height: 200px;
 }
-#login-logo{
-  margin-left: 545px;
-}
 
-.page-header {
-    background-color: white;
+.header {
+    background-color: #F5B3AF;
     font-family: 'Raleway', sans-serif;
     height: 200px;
-    border-bottom: 2px double;
+}
+
+.firstPage {
+    background-color: #F5B3AF;
+}
+
+#login-logo {
+    margin-left: 565px;
+}
+
+#passwordInput {
+    margin-left: 585px;
+}
+
+#usernameInput {
+    margin-left: 585px;
+}
+
+#guest-btn {
+    margin-left: 595px;
+    width: 150px;
+    color: #F5B3AF;
+    background-color: white;
+}
+
+#login-btn {
+    margin-left: 595px;
+    width: 150px;
+    margin-top: 10px;
+    color: #F5B3AF;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+#create-btn {
+    margin-left: 595px;
+    width: 150px;
+    margin-top: 10px;
+    color: #F5B3AF;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+#inputEmail {
+    margin-left: 580px;
+}
+
+#inputName {
+    margin-left: 580px;
+}
+
+#createPassword {
+    margin-left: 580px;
+}
+
+#createUsername {
+    margin-left: 580px;
+}
+
+.header-links {
+    margin: 15px;
 }
 
 #nav-top5 {
@@ -29,7 +82,6 @@ body {
 #nav-top6 {
     font-size: 20px;
 }
-
 
 #account-header-link {
     float: right;
@@ -199,37 +251,6 @@ input {
     margin: 40px 150px;
     font-size: 60px;
     font-family: 'Raleway', sans-serif;
-
-}
-#usernameInput{
-  margin-top: 20px;
-  margin-left: 550px;
-}
-
-#logo-Login{
-  margin-left: 550px;
-
-}
-#passwordInput{
-  margin-left: 550px;
-
-}
-#login-btn{
-  margin-left: 565px;
-  color: #F5B3AF;
-  border-color: none;
-  background-color: white;
-  width: 140px;
-  margin-top: 20px;
-
-}
-#guest-btn{
-  margin-left: 565px;
-  color: #F5B3AF;
-  border-color: none;
-  background-color: white;
-  width: 140px;
-  margin-top: 20px;
 }
 
 #phone-img {
@@ -260,5 +281,3 @@ input {
     width: 80%;
     margin: 0% 10%;
 }
-
-
