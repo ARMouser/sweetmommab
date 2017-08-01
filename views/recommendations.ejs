@@ -8,27 +8,60 @@
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
 </head>
 
 <body>
     <%- include('partials/header') %>
         <div class="container">
-            <% rec = JSON.parse(rec) %>
-                <% for(var i in rec) { %>
-                    <div class="container">
-                        <p>
-                            <%=rec[i].text%>
-                        </p>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default" id="recommendation-panel">
+                        <div class="panel-body">
+                            <% rec = JSON.parse(rec) %>
+                                <% for(var i in rec) { %>
+                                    <div class="container">
+                                        <p>
+                                            <%=rec[i].User.username%>
+                                                <%=rec[i].text%>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                                        <div>
+                                            <button id="show-subrecmodal-btn">Write Your Own</button>
+                                        </div>
+                        </div>
                     </div>
-                    <% } %>
+                </div>
+            </div>
         </div>
-        <div>
-            <a href="/submitRecommendation" onClick="/submitRecommendation">Write Your Own</a>
-        </div>
-        <script src="assets/javascript/app.js"></script>
+        <% if (user) { %>
+            <div class="modal fade" id="submit-rec-modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Your Recommendation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/api/save-recommendation" method="post">
+                                <input type="hidden" name="id" value=<%=user.id%>>
+                                <textarea id="subrecmodal-text-input" name="text"></textarea>
+                                <button type="submit" class="btn btn-primary" id="subrecmodal-submit-btn">Save Recommendation</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+                <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
-</body>
