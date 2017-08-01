@@ -46,40 +46,41 @@ module.exports = function(app) {
         });
     });
 
-  app.post("/api/order/product/", function(req, res) {
-      db.Order.findOrCreate({
-        where: {
-          UserId: req.body.userid,
-          sent: false
-        }
-      }).then(function(dbOrder){
-        db.Product.findOne({
-          where: {
-            id: req.body.productid
-          }
-        }).then(function(dbProduct){
-          dbProduct.addOrder(dbOrder[0]);
-          res.redirect("/order");
-        }).catch(function(err){
-          console.log(err);
-        })
-      }).catch(function(err){
-        console.log(err);
-      });
-  });
+    app.post("/api/order/product/", function(req, res) {
+        db.Order.findOrCreate({
+            where: {
+                UserId: req.body.userid,
+                sent: false
+            }
+        }).then(function(dbOrder) {
+            db.Product.findOne({
+                where: {
+                    id: req.body.productid
+                }
+            }).then(function(dbProduct) {
+                dbProduct.addOrder(dbOrder[0]);
+                res.redirect("/order");
+            }).catch(function(err) {
+                console.log(err);
+            })
+        }).catch(function(err) {
+            console.log(err);
+        });
+    });
 
-  app.put("/api/order/checkout", function(req, res) {
-    db.Order.update({
-      where: {
-        id: req.body.orderid
-      }
-    }, {
-      sent: true
-    }).then(function(dbOrder){
-      //redirect to payment when implemented
-      res.json(dbOrder);
-    }).catch(function(err){
-      console.log(err);
+    app.put("/api/order/checkout", function(req, res) {
+        db.Order.update({
+            where: {
+                id: req.body.orderid
+            }
+        }, {
+            sent: true
+        }).then(function(dbOrder) {
+            //redirect to payment when implemented
+            res.json(dbOrder);
+        }).catch(function(err) {
+            console.log(err);
+        });
     });
   });
 
@@ -127,7 +128,7 @@ module.exports = function(app) {
             res.json(dbOrder);
         });
 
-  });
+    });
 
     app.get("/api/recommendations", function(req, res) {
         db.Recommendation.findAll({
@@ -162,8 +163,13 @@ module.exports = function(app) {
             }
         }).then(function(data) {
             res.json(data)
+<<<<<<< HEAD
         });
     });
+=======
+        })
+    })
+>>>>>>> 8c3553fe050a182a3a0091ad2914bdae2ee92b0e
 
     app.post("/api/save-recommendation", function(req, res) {
         console.log(req.body.id)
