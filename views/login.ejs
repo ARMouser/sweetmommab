@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>
+            Sweet Momma Bs
+        </title>
+        <link rel="stylesheet" href="/assets/css/reset.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+  <body>
 
 <head>
     <title>
@@ -14,28 +25,27 @@
 
 <body>
     <div class="login">
-        <img src="/assets/images/smb.png" id='smb'>
+        <img src="/assets/images/smb.png" id='login-logo'height="200px">
     </div>
     <div class="enterlogin">
         <form action="/account/login" method="post">
             <div>
-                <input type="text" name="username" placeholder="Username" />
-                <br/>
+               <input type="text" name="username" placeholder="Username" / id="usernameInput"><br/>
             </div>
             <div>
-                <input type="password" name="password" placeholder="Password" />
+               <input type="password" name="password" placeholder="Password" / id="passwordInput">
+             </div>
+             <% if(message.error) {%>
+             <p><%=message.error%></p>
+           <% } %>
+           <div>
+             <input type="submit" value="Login"/ id="login-btn">
             </div>
-            <% if(message.error) {%>
-                <p>
-                    <%=message.error%>
-                </p>
-                <% } %>
-                    <div>
-                        <input type="submit" value="Login" />
-                    </div>
-        </form>
-    </div>
-    <script src="assets/javascript/app.js"></script>
-</body>
+            <div>
+              <input type="submit" value="Guest"/ id="guest-btn">
+             </div>
+          </form>
+        </div>
+        <script src="assets/javascript/app.js"></script>
 
 </html>

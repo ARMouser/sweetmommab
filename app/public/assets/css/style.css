@@ -1,4 +1,8 @@
-.header-links-container {
+body {
+    background-color: #F5B3AF !important;
+
+}
+.header-links {
     margin-top: 60px;
     text-align: center;
     font-size: 32px;
@@ -7,15 +11,15 @@
 #smb {
     height: 200px;
 }
-
-.header {
-    background-color: #F5B3AF;
-    font-family: 'Raleway', sans-serif;
-    height: 200px;
+#login-logo{
+  margin-left: 545px;
 }
 
-.header-links {
-    margin: 15px;
+.page-header {
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+    height: 200px;
+    border-bottom: 2px double;
 }
 
 #nav-top5 {
@@ -195,6 +199,37 @@ input {
     margin: 40px 150px;
     font-size: 60px;
     font-family: 'Raleway', sans-serif;
+
+}
+#usernameInput{
+  margin-top: 20px;
+  margin-left: 550px;
+}
+
+#logo-Login{
+  margin-left: 550px;
+
+}
+#passwordInput{
+  margin-left: 550px;
+
+}
+#login-btn{
+  margin-left: 565px;
+  color: #F5B3AF;
+  border-color: none;
+  background-color: white;
+  width: 140px;
+  margin-top: 20px;
+
+}
+#guest-btn{
+  margin-left: 565px;
+  color: #F5B3AF;
+  border-color: none;
+  background-color: white;
+  width: 140px;
+  margin-top: 20px;
 }
 
 #phone-img {
@@ -225,3 +260,5 @@ input {
     width: 80%;
     margin: 0% 10%;
 }
+
+
