@@ -16,7 +16,7 @@ module.exports = function(app) {
             }
         }).then(function(items) {
             res.json(items)
-        })
+        });
     });
 
     app.get("/api/products/:id", function(req, res) {
@@ -58,8 +58,7 @@ module.exports = function(app) {
                     id: req.body.productid
                 }
             }).then(function(dbProduct) {
-                console.log(dbProduct.OrderProducts);
-                dbProduct.addOrder(dbOrder[0]);
+                dbProduct.addOrder(dbOrder[0], {through: {quantity: req.body.quantity}});
                 res.redirect("/order");
             }).catch(function(err) {
                 console.log(err);
@@ -69,28 +68,13 @@ module.exports = function(app) {
         });
     });
 
-    app.post("/api/order/checkout", function(req, res) {
-        db.Order.update({
-            sent: true
-        }, {
-            where: {
-                id: req.body.orderid
-            }
-        }).then(function(dbOrder) {
-            //redirect to payment when implemented
-            res.json(dbOrder);
-        }).catch(function(err) {
-            console.log(err);
-        });
-    });
-
     app.put("/api/order/checkout", function(req, res) {
         db.Order.update({
             sent: true
         }, {
-            where: {
-                id: req.body.orderid
-            }
+          where: {
+              id: req.body.orderid
+          }
         }).then(function(dbOrder) {
             //redirect to payment when implemented
             res.json(dbOrder);
@@ -154,7 +138,7 @@ module.exports = function(app) {
             console.log(data);
             res.json(data);
         });
-    })
+    });
 
     app.get("/api/recommendations_approval", function(req, res) {
         db.Recommendation.findAll({
@@ -163,20 +147,18 @@ module.exports = function(app) {
             }
         }).then(function(data) {
             res.json(data)
-        })
-    })
+        });
+    });
 
     app.post("/api/save-recommendation", function(req, res) {
         console.log(req.body.id)
         db.Recommendation.create({
             text: req.body.text,
             UserId: req.body.id
-
         }).then(function(hold) {
-
             res.redirect("/recommendations")
         }).catch(function(err) {
             console.log(err)
-        })
-    })
-}
+        });
+    });
+};

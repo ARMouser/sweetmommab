@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
 		Order.belongsTo(models.User);
 
 		Order.belongsToMany(models.Product, {
-			through: "OrderProducts"
+			through: "OrderProduct"
 		});
 	}
 
