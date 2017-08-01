@@ -58,7 +58,7 @@ module.exports = function(app) {
                     id: req.body.productid
                 }
             }).then(function(dbProduct) {
-                dbProduct.addOrder(dbOrder[0]);
+                dbProduct.addOrder(dbOrder[0], {through: {quantity: req.body.quantity}});
                 res.redirect("/order");
             }).catch(function(err) {
                 console.log(err);
@@ -68,29 +68,15 @@ module.exports = function(app) {
         });
     });
 
-    app.put("/api/order/checkout", function(req, res) {
+    app.post("/api/order/checkout", function(req, res) {
+      console.log(req.body);
         db.Order.update({
-            where: {
-                id: req.body.orderid
-            }
-        }, {
-            sent: true
-        }).then(function(dbOrder) {
-            //redirect to payment when implemented
-            res.json(dbOrder);
-        }).catch(function(err) {
-            console.log(err);
-        });
-    });
-  });
 
-    app.put("/api/order/checkout", function(req, res) {
-        db.Order.update({
-            where: {
-                id: req.body.orderid
-            }
-        }, {
             sent: true
+        }, {
+          where: {
+              id: req.body.orderid
+          }
         }).then(function(dbOrder) {
             //redirect to payment when implemented
             res.json(dbOrder);
@@ -98,6 +84,21 @@ module.exports = function(app) {
             console.log(err);
         });
     });
+
+    // app.put("/api/order/checkout", function(req, res) {
+    //     db.Order.update({
+    //         where: {
+    //             id: req.body.orderid
+    //         }
+    //     }, {
+    //         sent: true
+    //     }).then(function(dbOrder) {
+    //         //redirect to payment when implemented
+    //         res.json(dbOrder);
+    //     }).catch(function(err) {
+    //         console.log(err);
+    //     });
+    // });
 
     app.get("/api/ordered-product/:id", function(req, res) {
         db.Order.findAll({
@@ -163,13 +164,8 @@ module.exports = function(app) {
             }
         }).then(function(data) {
             res.json(data)
-<<<<<<< HEAD
         });
     });
-=======
-        })
-    })
->>>>>>> 8c3553fe050a182a3a0091ad2914bdae2ee92b0e
 
     app.post("/api/save-recommendation", function(req, res) {
         console.log(req.body.id)

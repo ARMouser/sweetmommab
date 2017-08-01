@@ -20,10 +20,10 @@
                 <% for (var i in order.Products) { %>
                     <li><%=order.Products[i].name%></li>
                     <li><%=order.Products[i].price%></li>
-                    <li><%=order.Products[i].OrderProducts.quantity%></li>
+                    <li><%=order.Products[i].OrderProduct.quantity%></li>
                 <% } %>
             </ul>
-            <form action="/api/order/checkout" method="put">
+            <form action="/api/order/checkout" method="post">
                 <input type="hidden" name="orderid" value=<%=order.id%>>
                 <input type="submit" value="Checkout" />
             </form>
