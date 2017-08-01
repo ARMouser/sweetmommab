@@ -14,22 +14,47 @@
 
 <body>
     <%- include('partials/header') %>
-        <div class="cart">
-            <% if (order.Products)  { %>
-            <ul>
-                <% for (var i in order.Products) { %>
-                    <li><%=order.Products[i].name%></li>
-                    <li><%=order.Products[i].price%></li>
-                    <li><%=order.Products[i].OrderProducts.quantity%></li>
-                <% } %>
-            </ul>
-            <form action="/api/order/checkout" method="put">
-                <input type="hidden" name="orderid" value=<%=order.id%>
-                <input type="submit" value="Checkout" />
-            </form>
-            <% } %>
-        </div>
-        <script src="assets/javascript/app.js"></script>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-1 col-lg-7">
+                    <div class="panel panel-default" id="cart-panel">
+                        <% if (order.Products)  { %>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for (var i in order.Products) { %>
+                                        <tr>
+                                            <td>
+                                                <%=order.Products[i].name%>
+                                            </td>
+                                            <td>
+                                                <%=order.Products[i].OrderProducts.quantity%>
+                                            </td>
+                                            <td>
+                                                $
+                                                <%=order.Products[i].price%>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <form action="/api/order/checkout?_method=PUT" method="post">
+                        <input type="hidden" name="orderid" value=<%=order.id%>>
+                        <button type="submit" class="btn btn-primary" id="cart-submit-btn">Submit Order</button>
+                    </form>
+                    <% } %>
+                </div>
+            </div>
+            <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>

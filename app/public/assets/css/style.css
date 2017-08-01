@@ -198,12 +198,20 @@ input {
     font-weight: 900;
 }
 
-#contact-panel {
+
+
+
+
+
+
+
+
+/*#contact-panel {
     border: 1px solid #d9f7f9;
     opacity: .8;
     background-color: #fdcfcd;
     margin-top: 40px;
-}
+}*/
 
 #carousel-panel {
     border: 3px solid #23527C;
@@ -240,11 +248,19 @@ input {
     border-radius: 15px;
 }
 
-#contact-panel {
+
+
+
+
+
+
+
+
+/*#contact-panel {
     background-color: white;
     height: 400px;
     margin-top: 40px;
-}
+}*/
 
 #contact-panel-title {
     color: #F5B3AF;
@@ -280,4 +296,70 @@ input {
     height: 200px;
     width: 80%;
     margin: 0% 10%;
+}
+
+#rec-username {
+    font-size: 40px;
+    text-align: center;
+    color: #23527C;
+}
+
+#rec-user-text {
+    font-size: 20px;
+}
+
+#rec-panel {
+    border: 2px solid #23527C;
+    font-family: 'Raleway', sans-serif;
+}
+
+.smb-rec-logo {
+    height: 100px;
+    width: 100px;
+}
+
+#show-subrecmodal-btn-container {
+    margin-top: 40px;
+}
+
+#rec-container {
+    margin-top: 40px;
+}
+
+#show-subrecmodal-btn {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    padding: 20px;
+    background-color: #23527C;
+    color: white;
+    border-radius: 15px;
+    border: 2px solid #F5B3AF;
+}
+
+#subrecmodal-submit-btn {
+    margin: 10px 32%;
+    background-color: #23527C;
+    border: 1px solid #F5B3AF;
+    font-family: 'Raleway', sans-serif;
+}
+
+#rec-modal-title {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: #23527C;
+}
+
+#cart-panel {
+    font-family: 'Raleway', sans-serif;
+    border: 2px solid #23527C;
+    margin-top: 40px;
+    font-size: 15px;
+}
+
+#cart-submit-btn {
+    background-color: #23527C;
+    border: 1px solid #F5B3AF;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 40px;
+    font-size: 30px;
 }

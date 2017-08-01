@@ -58,6 +58,7 @@ module.exports = function(app) {
                     id: req.body.productid
                 }
             }).then(function(dbProduct) {
+                console.log(dbProduct.OrderProducts);
                 dbProduct.addOrder(dbOrder[0]);
                 res.redirect("/order");
             }).catch(function(err) {
@@ -68,13 +69,13 @@ module.exports = function(app) {
         });
     });
 
-    app.put("/api/order/checkout", function(req, res) {
+    app.post("/api/order/checkout", function(req, res) {
         db.Order.update({
+            sent: true
+        }, {
             where: {
                 id: req.body.orderid
             }
-        }, {
-            sent: true
         }).then(function(dbOrder) {
             //redirect to payment when implemented
             res.json(dbOrder);
@@ -85,11 +86,11 @@ module.exports = function(app) {
 
     app.put("/api/order/checkout", function(req, res) {
         db.Order.update({
+            sent: true
+        }, {
             where: {
                 id: req.body.orderid
             }
-        }, {
-            sent: true
         }).then(function(dbOrder) {
             //redirect to payment when implemented
             res.json(dbOrder);
