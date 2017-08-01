@@ -11,13 +11,13 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
-
+<%- include('partials/header') %>
 <body>
-    <%- include('partials/header') %>
+
+    <div class="container">
         <div class="profile">
-            <label><b><%=user.username%></b></label>
-            Name: <input type="text" name="Name" value=<%=user.name%>
-            Email: <input type="text" name="Email" value=<%=user.email%> >
+            Name: <input type="text" name="Name" value=<%=user.name%> id= "profileName">
+            Email: <input type="text" name="Email" value=<%=user.email%> id= "profileEmail">
         </div>
         <div class="pastorders">
              - Past Orders
@@ -46,6 +46,7 @@
                             <% } %>
             </a>
         </div>
+    </div>
 </body>
 
 </html>

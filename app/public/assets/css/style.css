@@ -1,42 +1,78 @@
-body {
-    background-color: #F5B3AF !important;
-
-}
-.header-links {
+.header-links-container {
     margin-top: 60px;
     text-align: center;
     font-size: 32px;
 }
-
 #smb {
     height: 200px;
 }
-#login-logo{
-  margin-left: 545px;
-}
-
-.page-header {
-    background-color: white;
+.header {
+    background-color: #F5B3AF;
     font-family: 'Raleway', sans-serif;
     height: 200px;
-    border-bottom: 2px double;
 }
+.firstPage{
+  background-color: #F5B3AF;
+}
+#login-logo{
+  margin-left: 565px;
+}
+#passwordInput{
+  margin-left: 585px;
+}
+#usernameInput{
+  margin-left: 585px;
+}
+#guest-btn{
+  margin-left: 595px;
+  width: 150px;
+  color: #F5B3AF;
+  background-color: white;
 
+
+}
+#login-btn{
+  margin-left: 595px;
+  width: 150px;
+  margin-top: 10px;
+  color: #F5B3AF;
+  background-color: white;
+  margin-bottom: 10px;
+}
+#create-btn{
+  margin-left: 595px;
+  width: 150px;
+  margin-top: 10px;
+  color: #F5B3AF;
+  background-color: white;
+  margin-bottom: 10px;
+}
+#inputEmail{
+  margin-left: 580px;
+}
+#inputName{
+  margin-left:580px;
+}
+#createPassword{
+  margin-left: 580px;
+}
+#createUsername{
+  margin-left: 580px;
+}
+.header-links {
+    margin: 15px;
+}
 #nav-top5 {
     font-size: 20px;
 }
-
 #nav-top6 {
     font-size: 20px;
 }
-
-
 #account-header-link {
     float: right;
     margin: 30px 50px;
     color: white;
 }
-
 .filling {
     font-family: 'Dosis', sans-serif;
     max-width: 1200px;
@@ -46,7 +82,6 @@ body {
     padding: 25px;
     font-size: 24px;
 }
-
 footer {
     max-width: 1200px;
     margin: 20px 20px 20px 20px;
@@ -54,25 +89,20 @@ footer {
     opacity: .7;
     text-align: center;
 }
-
 a:link {
     text-decoration: none;
     color: white;
 }
-
 a:visited {
     color: white;
 }
-
 a:hover {
     color: #58c77b;
 }
-
 .is-active-link {
     border-bottom: 2px solid white;
     font-weight: bold;
 }
-
 #order {
     width: 500px;
     height: 250px;
@@ -80,11 +110,9 @@ a:hover {
     border: grey solid 2px;
     padding: 20px;
 }
-
 #orderList {
     border-top: solid gray 2px;
 }
-
 #recs {
     width: 500px;
     height: 250px;
@@ -95,15 +123,12 @@ a:hover {
     top: -270px;
     left: 600px;
 }
-
 #recList {
     border-top: solid gray 2px;
 }
-
 #admin-header {
     margin-left: -80px
 }
-
 #add {
     position: relative;
     border: 2px grey solid;
@@ -112,11 +137,9 @@ a:hover {
     margin: 20px;
     top: -250px;
 }
-
 input {
     padding: 10px;
 }
-
 #search {
     border: 2px grey solid;
     padding: 20px;
@@ -125,148 +148,96 @@ input {
     margin: 20px;
     top: -230px;
 }
-
 #about-pic {
     width: 300px;
     height: 300px;
     float: left;
     margin: 0px 10px 5px 0px;
 }
-
 #about-panel {
     border: 3px solid #23527C;
     border-radius: 15px;
     margin-top: 40px;
     font-family: 'Raleway', sans-serif;
 }
-
 #about-panel-title {
     text-align: center;
     color: #F5B3AF;
     font-weight: 900;
 }
-
 #contact-panel {
     border: 1px solid #d9f7f9;
     opacity: .8;
     background-color: #fdcfcd;
     margin-top: 40px;
 }
-
 #carousel-panel {
     border: 3px solid #23527C;
     border-radius: 15px;
     margin-top: 40px;
     background-color: #23527C;
 }
-
 .content-area {
     position: relative;
     width: 500px;
     margin: 0 auto;
     margin: 40px 60px 46px 20px
 }
-
 .carousel-indicators li {
     border-radius: 50%;
     height: 20px;
     width: 20px;
 }
-
 .carousel-indicators .active {
     height: 25px;
     width: 25px;
 }
-
 .carousel-img {
     height: 400px !important;
     width: 500px;
     border-radius: 15px;
 }
-
 .carousel-control {
     border-radius: 15px;
 }
-
 #contact-panel {
     background-color: white;
     height: 400px;
     margin-top: 40px;
 }
-
 #contact-panel-title {
     color: #F5B3AF;
     margin: 40px 150px;
     font-size: 60px;
     font-family: 'Raleway', sans-serif;
-
 }
-#usernameInput{
-  margin-top: 20px;
-  margin-left: 550px;
-}
-
-#logo-Login{
-  margin-left: 550px;
-
-}
-#passwordInput{
-  margin-left: 550px;
-
-}
-#login-btn{
-  margin-left: 585px;
-  color: #F5B3AF;
-  border-color: none;
-  background-color: white;
-  width: 140px;
-  margin-top: 20px;
-
-}
-#guest-btn{
-  margin-left: 565px;
-  color: #F5B3AF;
-  border-color: none;
-  background-color: white;
-  width: 140px;
-  margin-top: 20px;
-
-}
-=======
-}
-
 #phone-img {
     height: 450px;
     width: 650px;
     float: left;
 }
-
 #phone-email-contact-div {
     color: #23527C;
 }
-
 #facebook-icon {
     height: 80px;
     width: 85px;
     margin-right: 10px;
     margin-top: 10px;
 }
-
 #instagram-icon {
     height: 100px;
     width: 100px;
     margin-top: 15px;
 }
-#createUsername{
-  margin-left: 565px;
-
+#subrecmodal-text-input {
+    height: 200px;
+    width: 80%;
+    margin: 0% 10%;
 }
-#createPassword{
-  margin-left: 565px;
+.pastRec{
+  margin-left: 450px;
 }
-#inputName{
-  margin-left: 565px;
-}
-#inputEmail{
-  margin-left: 565px;
+.pastorders{
+  margin-left: 450px;
 }
