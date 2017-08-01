@@ -97,7 +97,7 @@ a:hover {
 }
 
 #admin-header {
-    margin-left: -80px
+    margin-left: 520px
 }
 
 #add {
@@ -218,4 +218,23 @@ input {
     height: 100px;
     width: 100px;
     margin-top: 15px;
+}
+
+#productName, #productPrice, #productQuantity, #productCustomize, #productImg {
+    font-size:20px;
+    width: 400px;
+}
+
+#btnAdd {
+    font-size:20px;
+}
+
+#searchBar {
+    font-size:20px;
+    width: 400px;
+}
+
+#searchBtn {
+    font-size:20px;
+    margin-left: 20px;
 }

@@ -4,7 +4,7 @@ var Link = require("react-router").Link;
 var Results = React.createClass({
     getInitialState: function () {
     // takes the props from the parent branch, search
-        return {edit: this.props.foundItems}
+        return {edit: ""}
     },
     listItems: function () {
     // create a list of all items in package
@@ -68,9 +68,9 @@ var Results = React.createClass({
     },
     render: function () {
        if (this.state.edit === "") {
-           return this.listItems();
-       } else {
            return this.noItems();
+       } else {
+           return this.listItems();
        }
     }
 });

@@ -9,7 +9,7 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/products/name", function(req, res) {
+  app.get("/api/products/:name", function(req, res) {
     db.Product.findAll({
       where: {
         name: req.params.name
