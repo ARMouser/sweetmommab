@@ -58,8 +58,13 @@ require('./app/routes/login-routes.js')(app, passport);
 // app.set("view engine", "handlebars");
 
 app.get('/admin', function(req, res) {
-    res.sendFile(__dirname + '/app/public/admin.html')
-})
+    if (req.user && req.user.id === 0){
+        res.sendFile(__dirname + '/app/public/admin.html')
+    }
+    else {
+        res.sendStatus(403);
+    }
+});
 
 //EJS for testing logins, uncomment above for using handlebars
 
