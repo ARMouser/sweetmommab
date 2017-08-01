@@ -16,12 +16,11 @@
     <%- include('partials/header') %>
         <div class="profile">
             <label><b><%=user.username%></b></label>
-            Name:
-            <input type="text" name="Name" value=<%=user.name%> > Email:
-            <input type="text" name="Email" value=<%=user.email%> >
+            Name: <input type="text" name="Name" value=<%=user.name%>
+            Email: <input type="text" name="Email" value=<%=user.email%> >
         </div>
         <div class="pastorders">
-            Past Orders
+             - Past Orders
             <a href="orders">
                 <% if(orders) { %>
                     <% for(var i in orders) { %>
@@ -36,7 +35,7 @@
             </a>
         </div>
         <div class="pastRec">
-            Recommendations
+             - Recommendations
             <a href="rec">
                 <% if (recs) { %>
                     <% for (var i in recs) { %>
