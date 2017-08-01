@@ -68,10 +68,8 @@ module.exports = function(app) {
         });
     });
 
-    app.post("/api/order/checkout", function(req, res) {
-      console.log(req.body);
+    app.put("/api/order/checkout", function(req, res) {
         db.Order.update({
-
             sent: true
         }, {
           where: {
@@ -84,21 +82,6 @@ module.exports = function(app) {
             console.log(err);
         });
     });
-
-    // app.put("/api/order/checkout", function(req, res) {
-    //     db.Order.update({
-    //         where: {
-    //             id: req.body.orderid
-    //         }
-    //     }, {
-    //         sent: true
-    //     }).then(function(dbOrder) {
-    //         //redirect to payment when implemented
-    //         res.json(dbOrder);
-    //     }).catch(function(err) {
-    //         console.log(err);
-    //     });
-    // });
 
     app.get("/api/ordered-product/:id", function(req, res) {
         db.Order.findAll({
