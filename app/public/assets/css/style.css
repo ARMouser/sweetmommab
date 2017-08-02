@@ -93,10 +93,22 @@
     font-family: 'Dosis', sans-serif;
     max-width: 1200px;
     background-color: #ffdcda;
-    margin: 20px 20px 20px 20px;
+    margin: 100px 20px 20px 100px;
     opacity: .8;
     padding: 25px;
     font-size: 24px;
+}
+
+#slogan {
+    text-align:center;
+    font-size:42px;
+    padding-top:100px;
+}
+
+#filling-info {
+    text-align:center;
+    padding-top: 20px;
+    font-size:24px;
 }
 
 footer {
@@ -153,7 +165,7 @@ a:hover {
 }
 
 #admin-header {
-    margin-left: -80px
+    margin-left: 520px
 }
 
 #add {
@@ -362,4 +374,27 @@ input {
     font-family: 'Raleway', sans-serif;
     margin-top: 40px;
     font-size: 30px;
+}
+
+#productName, #productPrice, #productQuantity, #productCustomize, #productImg {
+    font-size:20px;
+    width: 400px;
+}
+
+#btnAdd {
+    font-size:20px;
+}
+
+#searchBar {
+    font-size:20px;
+    width: 400px;
+}
+
+#searchBtn {
+    font-size:20px;
+    margin-left: 20px;
+}
+
+#bio {
+    font-size:20px;
 }
