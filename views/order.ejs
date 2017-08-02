@@ -13,51 +13,41 @@
 </head>
 
 <body>
-    <div class="Logo">
-        <%- include('partials/header') %>
-            <div class="optionDropdown">
-            </div>
-            <div class="goodies">
-                <h2 id="goodieTitle"></h2>
-                <% products = JSON.parse(products) %>
-                    <% for (var i in products) { %>
-                        <img class="foodpic" src=<%=products[i].photo %>
-                        <ul class="product">
-                            <li class="product-name">
-                                <%=products[i].name %>
-                            </li>
-                            <li class="product-desc">
-                                <%=products[i].description%>
-                            </li>
-                            <li class="price">$
-                                <%=products[i].price%>
-                            </li>
-                        </ul>
-                        <div id="goodieAmount">
-                        </div>
-                        <div id="quanity">
-                        </div>
-                        <div id="customizableSection">
-                        </div>
-                        <div id="customizableDesctiption">
-                            <ul>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </div>
-                        <% if(user) { %>
-                            <div class="addToCart">
-                                <form action="/api/order/product" method="post">
-                                    <input type="hidden" name="productid" value=<%=products[i].id%> />
-                                    <input type="hidden" name="userid" value=<%=user.id%> />
-                                    <input name="quantity" placeholder="1" value="1" />
-                                    <input type="submit" value="Add to Cart" />
-                                </form>
+    <%- include('partials/header') %>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <% products = JSON.parse(products) %>
+                        <% for (var i in products) { %>
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <img class="col-md-2" src=<%=products[i].photo %>>
+                                    <div class="col-md-2">
+                                        <h4><%=products[i].name %></h4>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h4><%=products[i].description%></h4>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <h4><%=products[i].price%></h4>
+                                    </div>
+                                    <% if(user) { %>
+                                        <div class="addToCart col-md-5">
+                                            <form action="/api/order/product" method="post">
+                                                <input type="hidden" name="productid" value=<%=products[i].id%>>
+                                                <input type="hidden" name="userid" value=<%=user.id%>>
+                                                <input name="quantity" placeholder="1" value="1">
+                                                <input type="submit" value="Add to Cart">
+                                            </form>
+                                        </div>
+                                        <% } %>
+                                </div>
                             </div>
                             <% } %>
-                                <% } %>
+                </div>
             </div>
-            <script src="assets/javascript/app.js"></script>
+        </div>
+        <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>

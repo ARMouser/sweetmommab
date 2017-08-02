@@ -11,3 +11,6 @@ $(document).ready(function() {
 $("#show-subrecmodal-btn").click(function() {
     $("#submit-rec-modal").modal("show");
 });
+$("#cart-submit-btn").click(function() {
+    alert("Order Submitted!")
+})

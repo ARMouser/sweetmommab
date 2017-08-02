@@ -10,15 +10,15 @@ module.exports = function(app) {
     });
 
 
-  app.get("/api/products/:name", function(req, res) {
-    db.Product.findAll({
-      where: {
-        name: req.params.name
-      }
-    }).then(function(items) {
-      res.json(items)
-    })
-  });
+    app.get("/api/products/:name", function(req, res) {
+        db.Product.findAll({
+            where: {
+                name: req.params.name
+            }
+        }).then(function(items) {
+            res.json(items)
+        })
+    });
 
     app.get("/api/products/:id", function(req, res) {
         db.Product.findOne({
@@ -78,7 +78,7 @@ module.exports = function(app) {
             }
         }).then(function(dbOrder) {
             //redirect to payment when implemented
-            res.json(dbOrder);
+            res.redirect("/");
         }).catch(function(err) {
             console.log(err);
         });
@@ -155,7 +155,8 @@ module.exports = function(app) {
         console.log(req.body.id)
         db.Recommendation.create({
             text: req.body.text,
-            UserId: req.body.id
+            UserId: req.body.id,
+            approved: true
         }).then(function(hold) {
             res.redirect("/recommendations")
         }).catch(function(err) {
