@@ -4,32 +4,35 @@ import Results from "./grandchildren/Results.js"
 
 var Search = React.createClass({
     // set the initial state
-    getInitialState : function() {
-        return {search: ""};
+    getInitialState: function() {
+        return {search: {}, term:""};
     },
     handleSearch: function(event) {
-    // this function sets the new state for the search term
+    // sets searchValue equal to what is searched, does a fetch for the items with the name searched, sets the state equal to it.
         event.preventDefault();
-        let newState = {
-            search: event.target.search.value
-        }
-        this.setState(newState);
-    },
-    findItem: function(item) {
-    // does the get for the stuff and creates a state to pass to props
-        fetch('/api/products/name', item).then(function(res) {
-            this.setState({foundItems: res.data})
+        let searchValue = event.target.searchBar.value; 
+
+        fetch(`api/products/${searchValue}`, {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json'
+            }
+        }).then((res) => {
+            res.json().then((resJson) => {
+                this.setState({search: resJson, term:searchValue});
+            })
         })
     },
     render: function () {
+        //passes down the search state to the results.
         return (
             <div id="search">
                 <h2> Search Products </h2>
-                <form onSubmit={this.handleSearch}>
+                <form onSubmit={this.handleSearch.bind(this)}>
                     <input type="text" placeholder="What needs to be updated" id="searchBar" />
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Submit" id="searchBtn"/>
                 </form>
-                <Results search={this.state.foundItems} />
+                <Results search={this.state.search} term={this.state.term} />
             </div>
         );
     }

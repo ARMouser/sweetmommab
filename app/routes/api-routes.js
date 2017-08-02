@@ -9,15 +9,16 @@ module.exports = function(app) {
             });
     });
 
-    app.get("/api/products/name", function(req, res) {
-        db.Product.findAll({
-            where: {
-                name: req.params.name
-            }
-        }).then(function(items) {
-            res.json(items)
-        });
-    });
+
+  app.get("/api/products/:name", function(req, res) {
+    db.Product.findAll({
+      where: {
+        name: req.params.name
+      }
+    }).then(function(items) {
+      res.json(items)
+    })
+  });
 
     app.get("/api/products/:id", function(req, res) {
         db.Product.findOne({
