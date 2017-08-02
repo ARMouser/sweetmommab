@@ -3,10 +3,10 @@ var Link = require("react-router").Link;
 
 var Results = React.createClass({
     getInitialState: function () {
-    // takes the props from the parent branch, search
-        return {edit: ""}
+    // sets initial state 
+        return {edit: {}, found:""}
     },
-    listItems: function () {
+    listItems: () => {
     // create a list of all items in package
         return (
             <div id="results">
@@ -19,7 +19,16 @@ var Results = React.createClass({
             </div>
         )
     },
-    editThis: function () {
+    shouldComponentUpdate: () => {
+        return true;
+    },
+    componentWillUpdate: () => {
+        console.log(`${this.props.search} props`)
+        // this.setState({
+        //     edit: this.props.search
+        // })
+    },
+     editThis: function () {
         //edit values of the item that's selected
         return (
             <div id='results'>
@@ -45,8 +54,7 @@ var Results = React.createClass({
             customize: event.target.editCustomize.value,
             img: event.target.editImg.value
         }
-        this.setState(editedItem);
-        this.postEdit(state.editedItem)
+        this.postEdit(editedItem)
     },
     postEdit: function (edit) {
     fetch('/api/new_products', {
@@ -67,7 +75,7 @@ var Results = React.createClass({
     )
     },
     render: function () {
-       if (this.state.edit === "") {
+       if (this.state.found === "") {
            return this.noItems();
        } else {
            return this.listItems();

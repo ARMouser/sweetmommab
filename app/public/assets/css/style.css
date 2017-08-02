@@ -37,10 +37,22 @@
     font-family: 'Dosis', sans-serif;
     max-width: 1200px;
     background-color: #ffdcda;
-    margin: 20px 20px 20px 20px;
+    margin: 100px 20px 20px 100px;
     opacity: .8;
     padding: 25px;
     font-size: 24px;
+}
+
+#slogan {
+    text-align:center;
+    font-size:42px;
+    padding-top:100px;
+}
+
+#filling-info {
+    text-align:center;
+    padding-top: 20px;
+    font-size:24px;
 }
 
 footer {
@@ -237,4 +249,8 @@ input {
 #searchBtn {
     font-size:20px;
     margin-left: 20px;
+}
+
+#bio {
+    font-size:20px;
 }
