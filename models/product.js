@@ -20,7 +20,7 @@ module.exports = function (sequelize, DataTypes) {
 
 	Product.associate = function(models) {
 		Product.belongsToMany(models.Order, {
-			through: "OrderProducts"
+			through: "OrderProduct"
 		});
 	}
 

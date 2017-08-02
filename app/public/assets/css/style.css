@@ -6,10 +6,78 @@
 #smb {
     height: 200px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9eb349f1a076a716e458c1819828e02575b8b543
 .header {
     background-color: #F5B3AF;
     font-family: 'Raleway', sans-serif;
     height: 200px;
+<<<<<<< HEAD
+=======
+}
+
+.firstPage {
+    background-color: #F5B3AF;
+}
+
+#login-logo {
+    margin-left: 565px;
+}
+
+#passwordInput {
+    margin-left: 585px;
+}
+
+#usernameInput {
+    margin-left: 585px;
+}
+
+#guest-btn {
+    margin-left: 595px;
+    width: 150px;
+    color: #F5B3AF;
+    background-color: white;
+}
+
+#login-btn {
+    margin-left: 595px;
+    width: 150px;
+    margin-top: 10px;
+    color: #F5B3AF;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+#create-btn {
+    margin-left: 595px;
+    width: 150px;
+    margin-top: 10px;
+    color: #F5B3AF;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+#inputEmail {
+    margin-left: 580px;
+}
+
+#inputName {
+    margin-left: 580px;
+}
+
+#createPassword {
+    margin-left: 580px;
+}
+
+#createUsername {
+    margin-left: 580px;
+}
+
+.header-links {
+    margin: 15px;
+>>>>>>> 9eb349f1a076a716e458c1819828e02575b8b543
 }
 .firstPage{
   background-color: #F5B3AF;
@@ -68,6 +136,10 @@
 #nav-top6 {
     font-size: 20px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9eb349f1a076a716e458c1819828e02575b8b543
 #account-header-link {
     float: right;
     margin: 30px 50px;
@@ -77,11 +149,27 @@
     font-family: 'Dosis', sans-serif;
     max-width: 1200px;
     background-color: #ffdcda;
-    margin: 20px 20px 20px 20px;
+    margin: 100px 20px 20px 100px;
     opacity: .8;
     padding: 25px;
     font-size: 24px;
 }
+<<<<<<< HEAD
+=======
+
+#slogan {
+    text-align: center;
+    font-size: 42px;
+    padding-top: 100px;
+}
+
+#filling-info {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 24px;
+}
+
+>>>>>>> 9eb349f1a076a716e458c1819828e02575b8b543
 footer {
     max-width: 1200px;
     margin: 20px 20px 20px 20px;
@@ -127,7 +215,7 @@ a:hover {
     border-top: solid gray 2px;
 }
 #admin-header {
-    margin-left: -80px
+    margin-left: 520px
 }
 #add {
     position: relative;
@@ -157,7 +245,7 @@ input {
 #about-panel {
     border: 3px solid #23527C;
     border-radius: 15px;
-    margin-top: 40px;
+    margin-top: 30px;
     font-family: 'Raleway', sans-serif;
 }
 #about-panel-title {
@@ -165,16 +253,20 @@ input {
     color: #F5B3AF;
     font-weight: 900;
 }
+<<<<<<< HEAD
 #contact-panel {
     border: 1px solid #d9f7f9;
     opacity: .8;
     background-color: #fdcfcd;
     margin-top: 40px;
 }
+=======
+
+>>>>>>> 9eb349f1a076a716e458c1819828e02575b8b543
 #carousel-panel {
     border: 3px solid #23527C;
     border-radius: 15px;
-    margin-top: 40px;
+    margin-top: 30px;
     background-color: #23527C;
 }
 .content-area {
@@ -200,17 +292,25 @@ input {
 .carousel-control {
     border-radius: 15px;
 }
+<<<<<<< HEAD
 #contact-panel {
     background-color: white;
     height: 400px;
     margin-top: 40px;
 }
+=======
+
+>>>>>>> 9eb349f1a076a716e458c1819828e02575b8b543
 #contact-panel-title {
     color: #F5B3AF;
     margin: 40px 150px;
     font-size: 60px;
     font-family: 'Raleway', sans-serif;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9eb349f1a076a716e458c1819828e02575b8b543
 #phone-img {
     height: 450px;
     width: 650px;
@@ -230,11 +330,16 @@ input {
     width: 100px;
     margin-top: 15px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9eb349f1a076a716e458c1819828e02575b8b543
 #subrecmodal-text-input {
     height: 200px;
     width: 80%;
     margin: 0% 10%;
 }
+<<<<<<< HEAD
 .pastRec{
   margin-left: 60px;
   margin-top: 40px;
@@ -281,3 +386,124 @@ input {
   color: black;
 
 }
+=======
+
+#rec-username {
+    font-size: 40px;
+    text-align: center;
+    color: #23527C;
+}
+
+#rec-user-text {
+    font-size: 20px;
+}
+
+#rec-panel {
+    border: 2px solid #23527C;
+    font-family: 'Raleway', sans-serif;
+}
+
+.smb-rec-logo {
+    height: 100px;
+    width: 100px;
+}
+
+#show-subrecmodal-btn-container {
+    margin-top: 40px;
+}
+
+#rec-container {
+    margin-top: 40px;
+}
+
+#show-subrecmodal-btn {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    padding: 20px;
+    background-color: #23527C;
+    color: white;
+    border-radius: 15px;
+    border: 2px solid #F5B3AF;
+}
+
+#subrecmodal-submit-btn {
+    margin: 10px 32%;
+    background-color: #23527C;
+    border: 1px solid #F5B3AF;
+    font-family: 'Raleway', sans-serif;
+}
+
+#rec-modal-title {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: #23527C;
+}
+
+#cart-panel {
+    font-family: 'Raleway', sans-serif;
+    border: 2px solid #23527C;
+    margin-top: 40px;
+    font-size: 15px;
+}
+
+#cart-submit-btn {
+    background-color: #23527C;
+    border: 1px solid #F5B3AF;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 40px;
+    font-size: 30px;
+}
+
+#productName,
+#productPrice,
+#productQuantity,
+#productCustomize,
+#productImg {
+    font-size: 20px;
+    width: 400px;
+}
+
+#btnAdd {
+    font-size: 20px;
+}
+
+#searchBar {
+    font-size: 20px;
+    width: 400px;
+}
+
+#searchBtn {
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#bio {
+    font-size: 20px;
+}
+
+#index-panel {
+    background-image: url("../images/smb-cookies.jpg");
+    height: 500px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+#index-pg-h1 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: #23527C;
+    margin: 30px 0px 15px;
+    font-size: 40px;
+}
+
+#index-pg-h3 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: #23527C
+}
+
+#index-pg-img {
+    margin-left: 5%;
+}
+>>>>>>> 9eb349f1a076a716e458c1819828e02575b8b543

@@ -36,12 +36,22 @@ var Add = React.createClass({
                     Add New Content
                 </h2>
                     <form onSubmit={this.handleSubmit}>
-                        <input type="text" placeholder="Name" id="productName" />
-                        <input type="text" placeholder="Price" id="productPrice" />
-                        <input type="text" placeholder="Quantity" id="productQuantity" />
-                        <input type="text" placeholder="Customize" id="productCustomize" />
-                        <input type="text" placeholder="Photo Name" id="productImg" />
-                        <input type="submit" value="Submit"/>
+                        <h3>Product Name</h3>
+                        <h4>This should be a specific Name</h4>
+                        <input type="text" placeholder="Name" id="productName" /><br />
+                        <h3>Price</h3>
+                        <h4>Do not include the $</h4>
+                        <input type="text" placeholder="Price" id="productPrice" /><br />
+                        <h3>Quantity the item is sold in</h3>
+                        <h4>Ex. "Sold by the Dozen" or "One 9x11 Cake"</h4>
+                        <input type="text" placeholder="Quantity" id="productQuantity" /><br />
+                        <h3>Customizeable options</h3>
+                        <h4>Ex. "Gluten Free Available" or Topping Changes</h4>
+                        <input type="text" placeholder="Customize" id="productCustomize" /><br />
+                        <h3>Image</h3>
+                        <h4>Please give the specific image name. Ex "mandmcookie.jpg"</h4>
+                        <input type="text" placeholder="Photo Name" id="productImg" /><br /><br />
+                        <input type="submit" value="Submit" id="btnAdd"/>
                     </form>
             </div>
         );

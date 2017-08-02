@@ -8,27 +8,61 @@
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
 </head>
 
 <body>
     <%- include('partials/header') %>
         <div class="container">
-            <% rec = JSON.parse(rec) %>
-                <% for(var i in rec) { %>
-                    <div class="container">
-                        <p>
-                            <%=rec[i].text%>
-                        </p>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-9" id="rec-container">
+                        <% for(var i in rec) { %>
+                            <div class="panel panel-default col-lg-12" id="rec-panel">
+                                <div class="panel-body">
+                                    <div class="col-md-2">
+                                        <img src="assets/images/smb.png" class="smb-rec-logo">
+                                    </div>
+                                    <div class="col-md-2" id="rec-username">
+                                        <%=rec[i].User.username%>
+                                    </div>
+                                    <div class="col-md-offset-1 col-md-7" id="rec-user-text">
+                                        <%=rec[i].text%>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
                     </div>
-                    <% } %>
+                    <div class="col-lg-3" id="show-subrecmodal-btn-container">
+                        <button id="show-subrecmodal-btn">Write Your Own</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <a href="/submitRecommendation" onClick="/submitRecommendation">Write Your Own</a>
-        </div>
-        <script src="assets/javascript/app.js"></script>
+        <% if (user) { %>
+            <div class="modal fade" id="submit-rec-modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="rec-modal-title">Your Recommendation</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/api/save-recommendation" method="post">
+                                <input type="hidden" name="id" value=<%=user.id%>>
+                                <textarea id="subrecmodal-text-input" name="text"></textarea>
+                                <button type="submit" class="btn btn-primary" id="subrecmodal-submit-btn">Save Recommendation</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+                <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
-</body>
