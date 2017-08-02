@@ -11,17 +11,20 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
+<img src="/assets/images/smb.png" id='login-logo'height="200px">
 
-<body>
+<body class="firstPage">
     <div class="loginForm">
-        <img src="assets/Images/_____" id="smb">
         <form action="/account/create" method="post">
-            Username:
-            <input type="text" placeholder="Username" name="username"> Password:
-            <input type="text" placeholder="Password" name="password"> Name:
-            <input type="text" placeholder="Name" name="name"> Email:
-            <input type="email" placeholder="Email" name="email">
-            <input type="submit" id="login-btn">Create Account</input>
+           <input type="text" placeholder="Username" name="username" id="createUsername">
+           <br>
+           <input type="text" placeholder="Password" name="password"id="createPassword">
+           <br>
+           <input type="text" placeholder="Enter Name" name="name" id="inputName">
+           <br>
+           <input type="email" placeholder="Enter Email" name="email" id="inputEmail">
+           <br>
+           <input type="submit" value="Create Account"id="create-btn"></input>
         </form>
         <% if(message.error) { %>
             <p>

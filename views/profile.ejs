@@ -11,17 +11,21 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
-
+<%- include('partials/header') %>
 <body>
-    <%- include('partials/header') %>
+  <div class="profile-panel">
+    <div class="container">
         <div class="profile">
-            <label><b><%=user.username%></b></label>
-            Name:
-            <input type="text" name="Name" value=<%=user.name%> > Email:
-            <input type="text" name="Email" value=<%=user.email%> >
+          <header><strong>Profile</strong></header>
+          <br>
+          <br>
+            Name:<input type="text" name="Name" value=<%=user.name%> id= "profileName">
+            <br>
+            <br>
+            Email: <input type="text" name="Email" value=<%=user.email%> id= "profileEmail">
         </div>
         <div class="pastorders">
-            Past Orders
+             - Past Orders
             <a href="orders">
                 <% if(orders) { %>
                     <% for(var i in orders) { %>
@@ -36,7 +40,7 @@
             </a>
         </div>
         <div class="pastRec">
-            Recommendations
+             - Recommendations
             <a href="rec">
                 <% if (recs) { %>
                     <% for (var i in recs) { %>
@@ -47,6 +51,8 @@
                             <% } %>
             </a>
         </div>
+    </div>
+  </div>
 </body>
 
 </html>
