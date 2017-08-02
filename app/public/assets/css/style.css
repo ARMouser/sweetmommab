@@ -100,15 +100,15 @@
 }
 
 #slogan {
-    text-align:center;
-    font-size:42px;
-    padding-top:100px;
+    text-align: center;
+    font-size: 42px;
+    padding-top: 100px;
 }
 
 #filling-info {
-    text-align:center;
+    text-align: center;
     padding-top: 20px;
-    font-size:24px;
+    font-size: 24px;
 }
 
 footer {
@@ -200,7 +200,7 @@ input {
 #about-panel {
     border: 3px solid #23527C;
     border-radius: 15px;
-    margin-top: 40px;
+    margin-top: 30px;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -210,39 +210,10 @@ input {
     font-weight: 900;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*#contact-panel {
-    border: 1px solid #d9f7f9;
-    opacity: .8;
-    background-color: #fdcfcd;
-    margin-top: 40px;
-}*/
-
 #carousel-panel {
     border: 3px solid #23527C;
     border-radius: 15px;
-    margin-top: 40px;
+    margin-top: 30px;
     background-color: #23527C;
 }
 
@@ -273,34 +244,6 @@ input {
 .carousel-control {
     border-radius: 15px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*#contact-panel {
-    background-color: white;
-    height: 400px;
-    margin-top: 40px;
-}*/
 
 #contact-panel-title {
     color: #F5B3AF;
@@ -404,25 +347,55 @@ input {
     font-size: 30px;
 }
 
-#productName, #productPrice, #productQuantity, #productCustomize, #productImg {
-    font-size:20px;
+#productName,
+#productPrice,
+#productQuantity,
+#productCustomize,
+#productImg {
+    font-size: 20px;
     width: 400px;
 }
 
 #btnAdd {
-    font-size:20px;
+    font-size: 20px;
 }
 
 #searchBar {
-    font-size:20px;
+    font-size: 20px;
     width: 400px;
 }
 
 #searchBtn {
-    font-size:20px;
+    font-size: 20px;
     margin-left: 20px;
 }
 
 #bio {
-    font-size:20px;
+    font-size: 20px;
+}
+
+#index-panel {
+    background-image: url("../images/smb-cookies.jpg");
+    height: 500px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+#index-pg-h1 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: #23527C;
+    margin: 30px 0px 15px;
+    font-size: 40px;
+}
+
+#index-pg-h3 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: #23527C
+}
+
+#index-pg-img {
+    margin-left: 5%;
 }
