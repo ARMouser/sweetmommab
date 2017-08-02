@@ -58,7 +58,7 @@ require('./app/routes/login-routes.js')(app, passport);
 // app.set("view engine", "handlebars");
 
 app.get('/admin', function(req, res) {
-    if (req.user && req.user.id === 0) {
+    if (req.user && req.user.username === "admin") {
         res.sendFile(__dirname + '/app/public/admin.html')
     } else {
         res.sendStatus(403);
@@ -70,7 +70,7 @@ app.get('/admin', function(req, res) {
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 
-db.sequelize.sync({force: true}).then(function() {
+db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
         console.log("Baking good on: " + PORT);
     });
