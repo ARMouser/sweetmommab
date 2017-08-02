@@ -59,7 +59,7 @@ module.exports = function(app) {
                     id: req.body.productid
                 }
             }).then(function(dbProduct) {
-                dbProduct.addOrder(dbOrder[0], {through: {quantity: req.body.quantity}});
+                dbProduct.addOrder(dbOrder[0], { through: { quantity: req.body.quantity } });
                 res.redirect("/order");
             }).catch(function(err) {
                 console.log(err);
@@ -73,9 +73,9 @@ module.exports = function(app) {
         db.Order.update({
             sent: true
         }, {
-          where: {
-              id: req.body.orderid
-          }
+            where: {
+                id: req.body.orderid
+            }
         }).then(function(dbOrder) {
             //redirect to payment when implemented
             res.json(dbOrder);
