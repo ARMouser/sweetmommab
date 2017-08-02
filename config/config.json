@@ -2,7 +2,7 @@
 
   "development": {
     "username": "root",
-    "password": "taito",
+    "password": "",
     "database": "smb",
     "host": "127.0.0.1",
     "dialect": "mysql"
