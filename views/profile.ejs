@@ -13,10 +13,15 @@
 </head>
 <%- include('partials/header') %>
 <body>
-
+  <div class="profile-panel">
     <div class="container">
         <div class="profile">
-            Name: <input type="text" name="Name" value=<%=user.name%> id= "profileName">
+          <header><strong>Profile</strong></header>
+          <br>
+          <br>
+            Name:<input type="text" name="Name" value=<%=user.name%> id= "profileName">
+            <br>
+            <br>
             Email: <input type="text" name="Email" value=<%=user.email%> id= "profileEmail">
         </div>
         <div class="pastorders">
@@ -47,6 +52,7 @@
             </a>
         </div>
     </div>
+  </div>
 </body>
 
 </html>

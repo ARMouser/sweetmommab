@@ -236,8 +236,48 @@ input {
     margin: 0% 10%;
 }
 .pastRec{
-  margin-left: 450px;
+  margin-left: 60px;
+  margin-top: 40px;
+  color: black;
+  font-weight: bold;
+
+
 }
 .pastorders{
-  margin-left: 450px;
+  margin-left: 60px;
+  margin-top: 80px;
+  color: black;
+  font-weight: bold;
+
+}
+#profileEmail{
+  margin-left: 10px;
+  /*margin-top: 70px;*/
+  color: black;
+}
+#profileName{
+  margin-left: 10px;
+  /*margin-bottom: 40px;*/
+  color: black;
+  font-size: 14px;
+
+}
+.profile-panel{
+  background-color: white;
+  height: 400px;
+  margin-top: 80px;
+  border-style: solid;
+  border-width: medium;
+  width: 550px;
+  margin-left: 400px;
+  border-color: #F5B3AF;
+  font-size: 14px;
+
+
+
+}
+.profile{
+  margin-top: 10px;
+  color: black;
+
 }
