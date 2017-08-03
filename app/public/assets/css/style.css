@@ -200,7 +200,7 @@ input {
 #about-panel {
     border: 3px solid #23527C;
     border-radius: 15px;
-    margin-top: 30px;
+    margin-top: 80px;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -236,7 +236,7 @@ input {
 }
 
 .carousel-img {
-    height: 400px !important;
+    height: 600px !important;
     width: 500px;
     border-radius: 15px;
 }
