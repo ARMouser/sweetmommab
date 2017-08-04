@@ -19,25 +19,25 @@
                 <div class="col-lg-12">
                     <% products = JSON.parse(products) %>
                         <% for (var i in products) { %>
-                            <div class="panel panel-default">
+                            <div class="panel">
                                 <div class="panel-body">
-                                    <img class="col-md-2" src=<%=products[i].photo %>>
-                                    <div class="col-md-2">
+                                    <img class="col-md-6" id='goodPhoto' src=<%=products[i].photo %>>
+                                    <div class="col-md-6 goodData">
                                         <h4><%=products[i].name %></h4>
-                                    </div>
-                                    <div class="col-md-2">
+                                    </div><br>
+                                    <div class="col-md-4 goodData">
                                         <h4><%=products[i].description%></h4>
                                     </div>
-                                    <div class="col-md-1">
-                                        <h4><%=products[i].price%></h4>
+                                    <div class="col-md-4 goodData">
+                                        <h4>$<%=products[i].price%></h4>
                                     </div>
                                     <% if(user) { %>
-                                        <div class="addToCart col-md-5">
+                                        <div class="addToCart col-md-6">
                                             <form action="/api/order/product" method="post">
                                                 <input type="hidden" name="productid" value=<%=products[i].id%>>
                                                 <input type="hidden" name="userid" value=<%=user.id%>>
-                                                <input name="quantity" placeholder="1" value="1">
-                                                <input type="submit" value="Add to Cart">
+                                                <input name="quantity" placeholder="1" id='quantity' value="1">
+                                                <input type="submit" id='goodSubmit' value="Sounds Good!">
                                             </form>
                                         </div>
                                         <% } %>

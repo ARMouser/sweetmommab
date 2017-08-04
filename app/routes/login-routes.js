@@ -47,6 +47,6 @@ module.exports = function(app, passport) {
 			failureRedirect: "/login",
 			failureFlash: true
 		}), function(req, res) {
-			res.redirect("back");
+			res.redirect("/");
 	});
 }

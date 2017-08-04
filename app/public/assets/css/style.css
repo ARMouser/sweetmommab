@@ -443,3 +443,27 @@ input {
     margin-top: 10px;
     color: black;
 }
+
+.goodData {
+    font-family: 'Raleway', sans-serif;
+    color: #23527C;
+    font-size: 24px;
+}
+
+#quantity{
+    width:50px;
+    margin-top:20px;
+    margin-right:20px;
+}
+
+#goodSubmit{
+    border:white;
+	background-color:#F5B3AF;
+    color:white;
+    font-size:20px;
+}
+#goodSubmit:hover {
+
+    background-color:white;
+    color:#F5B3AF;
+}

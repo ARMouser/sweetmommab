@@ -44,6 +44,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static("./app/public"));
+app.use(express.static("./app/public/assets/images/product-images"))
 app.use(methodOverride("_method"));
 app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 app.use(flash());
@@ -70,7 +71,7 @@ app.get('/admin', function(req, res) {
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({}).then(function() {
     app.listen(PORT, function() {
         console.log("Baking good on: " + PORT);
     });
