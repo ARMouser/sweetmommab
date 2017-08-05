@@ -17,12 +17,12 @@ var Search = React.createClass({
             headers: {
                 Accept: 'application/json'
             }
-        }).then((res) => {
-            res.json().then((resJson) => {
-                this.setState({search: resJson, term:searchValue});
-            })
-        })
+        }).then((res) => res.json())
+        .then((resJson) => {
+            this.setState({search: resJson, term:searchValue});
+        });
     },
+
     render: function () {
         //passes down the search state to the results.
         return (

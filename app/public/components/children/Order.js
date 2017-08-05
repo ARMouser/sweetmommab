@@ -8,11 +8,11 @@ var Order = React.createClass({
     componentDidMount: function () {
         this.pullOrders()
     },
-    pullOrders: function () {
+    pullOrders: () => {
         //pull all the orders from the database
-        fetch('/api/new_orders').then(function(res) {
-            this.setState({orders: res.data})
-        })
+        fetch('/api/new_orders').then((res) => {
+            this.setState({orders: res.data});
+        });
         // potentially have to set original state by saying state = {object}
     },
     newOrders : function() {

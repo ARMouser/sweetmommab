@@ -4,16 +4,18 @@ var Link = require("react-router").Link;
 var Results = React.createClass({
     getInitialState: function () {
     // sets initial state 
-        return {edit: {}, found:""}
+        return {edit: {}, found:false}
     },
-    listItems: () => {
+    listItems: function() {
     // create a list of all items in package
         return (
             <div id="results">
                 <h2> Choose which item to edit </h2>
                 <div id='resultlist'>
                     <ul>
-                        <li onClick={this.editThis}> __name of item __include an id in list tag</li>
+                        {Object.keys(this.props.search).map((obj, i) => {
+                            return <li onClick={this.editThis} key={i}> {obj.name} </li>
+                        })}
                     </ul>
                 </div>
             </div>
@@ -22,11 +24,14 @@ var Results = React.createClass({
     shouldComponentUpdate: () => {
         return true;
     },
-    componentWillUpdate: () => {
-        console.log(`${this.props.search} props`)
-        // this.setState({
-        //     edit: this.props.search
-        // })
+    componentWillUpdate: function() {
+        //this.setState will call this repeatedly so have to use this.state
+        if(!this.state.found){
+            this.setState({
+                found: true,
+                edit: this.props.search
+            });
+        }
     },
      editThis: function () {
         //edit values of the item that's selected
@@ -46,7 +51,7 @@ var Results = React.createClass({
     },
     gatherEdit: function (event) {
     // gather data after the new item is submitted
-    event.preventDefault();
+        event.preventDefault();
         let editedItem ={
             productName: event.target.editName.value,
             price: event.target.editPrice.value,
@@ -54,7 +59,7 @@ var Results = React.createClass({
             customize: event.target.editCustomize.value,
             img: event.target.editImg.value
         }
-        this.postEdit(editedItem)
+        this.postEdit(editedItem);
     },
     postEdit: function (edit) {
     fetch('/api/new_products', {
@@ -75,7 +80,7 @@ var Results = React.createClass({
     )
     },
     render: function () {
-       if (this.state.found === "") {
+       if (!this.state.found) {
            return this.noItems();
        } else {
            return this.listItems();
