@@ -1,16 +1,5 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Sweet Momma Bs
-        </title>
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    </head>
-  <body>
 
 <head>
     <title>
@@ -23,28 +12,50 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
-<body class="firstPage">
-    <div class="login">
-        <img src="/assets/images/smb.png" id='login-logo'height="200px">
-    </div>
-    <div class="enterlogin">
-        <form action="/account/login" method="post">
-            <div>
-               <input type="text" name="username" placeholder="Username" / id="usernameInput"><br/>
+<body>
+
+    <head>
+        <title>
+            Sweet Momma Bs
+        </title>
+        <link rel="stylesheet" href="/assets/css/reset.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+
+    <body class="firstPage">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4">
+                    <div id="login-pg-info-div">
+                        <a href="/"><img src="/assets/images/smb.png" id='login-logo' height="200px"></a>
+                        <div class="enterlogin">
+                            <form action="/account/login" method="post">
+                                <div>
+                                    <input type="text" name="username" placeholder="Username" / id="usernameInput">
+                                    <br/>
+                                </div>
+                                <div>
+                                    <input type="password" name="password" placeholder="Password" / id="passwordInput">
+                                </div>
+                                <% if(message.error) {%>
+                                    <p id="login-error-message">
+                                        Please Sign Up!
+                                    </p>
+                                    <div>
+                                        <input id="signup-btn-login-pg" type="button" onClick="location.href='/create'" value="Sign Up">
+                                    </div>
+                                    <% } %>
+                                        <div>
+                                            <input type="submit" value="Login" / id="login-btn">
+                                        </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-               <input type="password" name="password" placeholder="Password" / id="passwordInput">
-             </div>
-             <% if(message.error) {%>
-             <p><%=message.error%></p>
-           <% } %>
-           <div>
-             <input type="submit" value="Login"/ id="login-btn" width="450px">
-            </div>
-            <div>
-              <input type="submit" value="Guest"/ id="guest-btn" width="450px">
-             </div>
-          </form>
         </div>
         <script src="assets/javascript/app.js"></script>
 

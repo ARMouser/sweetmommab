@@ -19,56 +19,94 @@
 }
 
 #login-logo {
-    margin-left: 565px;
+    margin: 0% 20%;
 }
 
 #passwordInput {
-    margin-left: 585px;
+    margin: 2% 25%;
+    border: 1px solid #23527C;
+    border-radius: 5px;
 }
 
 #usernameInput {
-    margin-left: 585px;
-}
-
-#guest-btn {
-    margin-left: 595px;
-    width: 150px;
-    color: #F5B3AF;
-    background-color: white;
+    margin: 2% 25%;
+    border: 1px solid #23527C;
+    border-radius: 5px;
 }
 
 #login-btn {
-    margin-left: 595px;
+    margin: 0% 27%;
     width: 150px;
     margin-top: 10px;
-    color: #F5B3AF;
-    background-color: white;
+    color: white;
+    background-color: #23527C;
     margin-bottom: 10px;
+    border: 1px solid #23527C;
+    border-radius: 5px;
+}
+
+#login-error-message {
+    margin: 0% 27%;
+    font-size: 20px;
+}
+
+#signup-btn-login-pg {
+    margin: 0% 27%;
+    width: 150px;
+    margin-top: 10px;
+    color: white;
+    background-color: #23527C;
+    margin-bottom: 10px;
+    border: 1px solid #23527C;
+    border-radius: 5px;
+}
+
+#login-pg-info-div {
+    margin-top: 30%;
+}
+
+#signup-panel {
+    margin-top: 30%;
 }
 
 #create-btn {
-    margin-left: 595px;
+    margin: 0% 27%;
     width: 150px;
     margin-top: 10px;
-    color: #F5B3AF;
-    background-color: white;
+    color: white;
+    background-color: #23527C;
     margin-bottom: 10px;
+    border: 1px solid #23527C;
+    border-radius: 5px;
 }
 
 #inputEmail {
-    margin-left: 580px;
+    margin: 2% 25%;
+    border: 1px solid #23527C;
+    border-radius: 5px;
 }
 
 #inputName {
-    margin-left: 580px;
+    margin: 2% 25%;
+    border: 1px solid #23527C;
+    border-radius: 5px;
 }
 
 #createPassword {
-    margin-left: 580px;
+    margin: 2% 25%;
+    border: 1px solid #23527C;
+    border-radius: 5px;
 }
 
 #createUsername {
-    margin-left: 580px;
+    margin: 2% 25%;
+    border: 1px solid #23527C;
+    border-radius: 5px;
+}
+
+#signup-error-message {
+    margin: 0% 27%;
+    font-size: 20px;
 }
 
 .header-links {
@@ -450,20 +488,21 @@ input {
     font-size: 24px;
 }
 
-#quantity{
-    width:50px;
-    margin-top:20px;
-    margin-right:20px;
+#quantity {
+    width: 50px;
+    margin-top: 20px;
+    margin-right: 20px;
 }
 
-#goodSubmit{
-    border:white;
-	background-color:#F5B3AF;
-    color:white;
-    font-size:20px;
+#goodSubmit {
+    border: white;
+    background-color: #F5B3AF;
+    color: white;
+    font-size: 20px;
 }
+
 #goodSubmit:hover {
 
-    background-color:white;
-    color:#F5B3AF;
+    background-color: white;
+    color: #F5B3AF;
 }

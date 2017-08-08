@@ -11,26 +11,34 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
-<img src="/assets/images/smb.png" id='login-logo'height="200px">
 
 <body class="firstPage">
-    <div class="loginForm">
-        <form action="/account/create" method="post">
-           <input type="text" placeholder="Username" name="username" id="createUsername">
-           <br>
-           <input type="text" placeholder="Password" name="password"id="createPassword">
-           <br>
-           <input type="text" placeholder="Enter Name" name="name" id="inputName">
-           <br>
-           <input type="email" placeholder="Enter Email" name="email" id="inputEmail">
-           <br>
-           <input type="submit" value="Create Account"id="create-btn"></input>
-        </form>
-        <% if(message.error) { %>
-            <p>
-                <%=message.error%>
-            </p>
-            <% } %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+                <div id="signup-panel">
+                    <a href="/"><img src="/assets/images/smb.png" id='login-logo' height="200px"></a>
+                    <div class="loginForm">
+                        <form action="/account/create" method="post">
+                            <input type="text" placeholder="Username" name="username" id="createUsername">
+                            <br>
+                            <input type="text" placeholder="Password" name="password" id="createPassword">
+                            <br>
+                            <input type="text" placeholder="Enter Name" name="name" id="inputName">
+                            <br>
+                            <input type="email" placeholder="Enter Email" name="email" id="inputEmail">
+                            <br>
+                            <input type="submit" value="Create Account" id="create-btn"></input>
+                        </form>
+                        <% if(message.error) { %>
+                            <p id="signup-error-message">
+                                Please fill all fields
+                            </p>
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="assets/javascript/app.js"></script>
 </body>
